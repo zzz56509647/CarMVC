@@ -1,0 +1,123 @@
+﻿
+
+<table class="table table-bordered">
+    <tr>
+        <td>图片：</td>
+        <td><input id="Image" type="file" /></td>
+
+    </tr>
+    <tr>
+        <td>汽车品牌：</td>
+        <td>
+            <select id="bid"></select>
+        </td>
+    </tr>
+    <tr>
+        <td>汽车名字：</td>
+        <td><input id="CarName" type="text" /></td>
+
+    </tr>
+    <tr>
+        <td>汽车年份：</td>
+        <td><input id="Years" type="text" />年</td>
+
+    </tr>
+    <tr>
+        <td>汽车品牌：</td>
+        <td>
+            <select id="cid"></select>
+        </td>
+    </tr>
+    <tr>
+        <td>汽车排量：</td>
+        <td><input id="CC" type="text" /></td>
+
+    </tr>
+    <tr>
+        <td>数量：</td>
+        <td><input id="Count" type="number" min="1" /></td>
+
+    </tr>
+    <tr>
+        <td>档位：</td>
+        <td><input id="AMT" type="text" /></td>
+
+    </tr>
+    <tr>
+        <td>日租单价：</td>
+        <td><input id="Price" type="text" /></td>
+
+    </tr>
+    <tr>
+        <td></td>
+        <td><input id="Submit1" type="submit" value="添加" onclick="Add()" class="btn btn-dark" /></td>
+        <td></td>
+    </tr>
+</table>
+
+@section scripts{
+    <script>
+        $(function () {
+            BandSelCarType();
+            BandSelCarBrand();
+        })
+        function BandSelCarType() {
+            $.ajax({
+                url: 'http://localhost:57894/api/zjlCarType5/',
+                type: 'get',
+                dataType: 'json',
+                success: function (d) {
+                    $("#bid").empty();
+                    $("#bid").append("<option value=''>--请选择--</option>");
+                    $(d).each(function () {
+                        var opt = "<option value=" + this.carTypeID + ">" + this.type + "</option>";
+                        $("#bid").append(opt);
+                    })
+                }
+            })
+        }
+
+        function BandSelCarBrand() {
+            $.ajax({
+                url: 'http://localhost:57894/api/zjlCarBrand/',
+                type: 'get',
+                dataType: 'json',
+                success: function (d) {
+                    $("#cid").empty();
+                    $("#cid").append("<option value=''>--请选择--</option>");
+                    $(d).each(function () {
+                        var opt = "<option value=" + this.carBrandID + ">" + this.brand + "</option>";
+                        $("#cid").append(opt);
+                    })
+                }
+            })
+        }
+
+
+        function Add() {
+            var obj = {};
+            obj.Image = $("#Image").val();
+            obj.bid = $("#bid").val();
+            obj.CarName = $("#CarName").val();
+            obj.Years = $("#Years").val();
+            obj.cid = $("#cid").val();
+            obj.CC = $("#CC").val();
+            obj.Count = $("#Count").val();
+            obj.AMT = $("#AMT").val();
+            obj.Price = $("#Price").val();
+
+            $.ajax({
+                url: 'http://localhost:57894/api/Admins/',
+                type: 'post',
+                dataType: 'json',
+                data: obj,
+                success: function (d) {
+                    if (d > 0) {
+                        alert('添加成功！');
+                        location.href = '/yyhCar/OrdersShow';
+                    }
+                }
+            })
+        }
+    </script>
+}
