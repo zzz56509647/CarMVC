@@ -7,6 +7,135 @@
 
 <table>
     <tr>
-        <td></td>
+        <td>汽车品牌：</td>
+        <td>
+            <select id="select">
+                <option value="-1">--请选择--</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>汽车名字：</td>
+        <td>
+            <input type="text" id="CarName" placeholder="请输入汽车型号" />
+        </td>
+    </tr>
+    <tr>
+        <td>汽车年份：</td>
+        <td>
+            <input type="text" id="Years" placeholder="请输入年份" />
+        </td>
+    </tr>
+    <tr>
+        <td>汽车类型：</td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>汽车排量：</td>
+        <td>
+            <input type="text" id="CC" placeholder="请输入排量" />
+        </td>
+    </tr>
+    <tr>
+        <td>变速箱：</td>
+        <td>
+            <input type="checkbox" id="AMT1" name="AMT" value="自动" /> 自动
+            <input type="checkbox" id="AMT2" name="AMT" value="手动" /> 手动
+        </td>
+    </tr>
+    <tr>
+        <td>日租价格（元/天）：</td>
+        <td>
+            <input type="text" id="Price" placeholder="请输入单价" />
+        </td>
+    </tr>
+    <tr>
+        <td>汽车照片：</td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" value="挂靠" onclick="AddVa()" class="btn bg-success" />
+        </td>
+        <td>
+            <input type="button" value="取消" onclick="location.href='SoCar/CarShow()'" class="btn btn-danger" />
+        </td>
     </tr>
 </table>
+
+
+
+<script>
+
+    $(
+        function () {
+            CarTypeBandSel();
+        }
+    );
+
+    function CarTypeBandSel() {
+
+    //$.ajax({
+    //    type: "Get",
+    //    url: "http://localhost:57894/api/zjlCarType5",
+    //    success: function (d) {
+    //        $("#select").empty(),
+
+    //        $.each(function () {
+    //            $("#select").append(
+    //                "<option value=" + item.CarTypeID + ">" + item.Type + "</option>");
+    //        });
+    //    },
+    //});
+
+        $.ajax({
+            type: "get",
+            url: "http://localhost:57894/api/zjlCarType5", //此次url改为真正需要的url
+            success: function (data, status) {
+                $.each(data, function (index, item) {
+                    $("#select").append(  //此处向select中循环绑定数据
+                        "<option value=" + item.CarTypeID + ">" + item.Type + "</option>");
+                });
+            },
+        });
+
+    }
+
+
+    function AddVa()
+    {
+        var obj = {};
+        obj.uid = "1";
+        obj.Image = "11";
+        obj.bid = "1";
+        obj.CarName = $("#CarName").val();
+        obj.Years = $("#Years").val();
+        obj.cid = "1";
+        obj.CC = $("#CC").val();
+        obj.AMT = "1";
+        obj.Price = $("#Price").val();
+
+            $.ajax({
+                url: "http://localhost:57894/api/zjlCar2",
+                type: "POST",
+                data: obj,
+                processData: false,
+                contentType: false,
+                crossDomain: true,
+                async=true,
+                success: function (d) {
+                    alert("挂靠成功");
+                    location.href = "SoCar/Show()";
+                },
+                error: function (d) {
+                    alert("挂靠失败");
+                    location.href = "SoCar/Show()";
+                }
+
+            })
+    }
+
+
+</script>
