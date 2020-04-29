@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\o\\Source\\Repos\\CarMVC\\CarMVC\\CarMVC\\CarMVC.csproj": {}
+    "D:\\A_Githup\\thisOnline\\CarMvc_\\CarMVC\\CarMVC\\CarMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\o\\Source\\Repos\\CarMVC\\CarMVC\\CarMVC\\CarMVC.csproj": {
+    "D:\\A_Githup\\thisOnline\\CarMvc_\\CarMVC\\CarMVC\\CarMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\o\\Source\\Repos\\CarMVC\\CarMVC\\CarMVC\\CarMVC.csproj",
+        "projectUniqueName": "D:\\A_Githup\\thisOnline\\CarMvc_\\CarMVC\\CarMVC\\CarMVC.csproj",
         "projectName": "CarMVC",
-        "projectPath": "C:\\Users\\o\\Source\\Repos\\CarMVC\\CarMVC\\CarMVC\\CarMVC.csproj",
-        "packagesPath": "C:\\Users\\o\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\o\\Source\\Repos\\CarMVC\\CarMVC\\CarMVC\\obj\\",
+        "projectPath": "D:\\A_Githup\\thisOnline\\CarMvc_\\CarMVC\\CarMVC\\CarMVC.csproj",
+        "packagesPath": "C:\\Users\\96549\\.nuget\\packages\\",
+        "outputPath": "D:\\A_Githup\\thisOnline\\CarMvc_\\CarMVC\\CarMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\o\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\96549\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -66,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
