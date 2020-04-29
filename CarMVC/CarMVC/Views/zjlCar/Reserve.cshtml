@@ -1,17 +1,26 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    ViewData["Title"] = "Reserve";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>ReserveCar</title>
-</head>
-<body>
-    <table>
+
+    <table class=" table table-borderless">
+        <tr>
+            <td>
+                车辆名字：
+            </td>
+            <td>
+                <span id="CarName"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                变速箱：
+            </td>
+            <td>
+                <span id="AMT"></span>
+            </td>
+        </tr>
         <tr>
             <td>租车用途：</td>
             <td>
@@ -46,36 +55,65 @@
             </td>
         </tr>
     </table>
-</body>
-</html>
 
 
-<script>
+    <script>
+
+    $(function(){
+        Show();
+    });
+
+    function Show() {
+          function show() {
+            $.ajax({
+                url: 'http://localhost:57894/api//' +@ViewContext.RouteData.Values["id"],
+                type: 'get',
+                dataType: 'json',
+                crossDomain: true,
+                success: function (d) {
+                    $("#OrdersID").val(d.OrdersID);
+                    $("#Reson").val(d.Reson);
+                    $("#Phone").val(d.Phone);
+
+                }
+            });
+        }
+    }
+
+    function Reserve() {
         var obj = {};
+
+        obj.Oid = "202004301";
+        obj.uid = 1;
+        obj.CarInfoid =  1;
+
+
         obj.Useing = $("#Useing").val();
         obj.StartTime = $("#StartTime").val();
         obj.EndTime = $("#EndTime").val();
-        obj.Driver = $("#Driver").click() == true ? "1" : "0";
-        function Reserve() {
-            $.ajax({
-                url: "http://localhost:57894/api/zjlCar",
-                type: "POST",
-                data: obj,
-                processData: false,
-                contentType: false,
-                crossDomain: true,
-                xhrFields: {
-                    withCredentials: true
-                },
-                success: function (d) {
-                    alert("预定成功");
-                    location.href = "SoCar/Show()";
-                },
-                error: function (d) {
-                    alert("预定失败");
-                    location.href = "SoCar/Show()";
-                }
 
-            })
-        }
-</script>
+
+        obj.Price = (obj.EndTime - obj.StartTime)* 2;   // 单价用来反填获取
+        obj.Driver = $("#Driver").click() == true ? "1" : "0";
+
+
+        $.ajax({
+            url: "http://localhost:57894/api/zjlCar",
+            type: "POST",
+            data: obj,
+            processData: false,
+            contentType: false,
+            crossDomain: true,
+
+            success: function (d) {
+                alert("预定成功");
+                location.href = "SoCar/Show()";
+            },
+            error: function (d) {
+                alert("预定失败");
+                location.href = "SoCar/Show()";
+            }
+
+        })
+    }
+    </script>
