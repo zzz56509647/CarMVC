@@ -23,17 +23,17 @@
         obj.UName = $("#Text1").val();
         obj.IDcard = $("#Text2").val();
         $.ajax({
-            url: '',
-            type: 'Post',
+            url: 'http://localhost:57894/api/zjlCar3/',
+            type: 'post',
             dataType: 'json',
-            data:obj,
-            async: true,
-            crossDomain: true,
+            data: obj,
             success: function (d) {
-                alert("认证成功！");
-                location.href = '//';
+                if (d > 0) {
+                    alert('添加成功！');
+                    location.href = '//';
+                }
             }
-    }
+        })
     </script>
 
 }
