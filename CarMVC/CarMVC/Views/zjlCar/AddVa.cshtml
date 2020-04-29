@@ -9,8 +9,8 @@
     <tr>
         <td>汽车品牌：</td>
         <td>
-            <select id="select">
-                <option value="-1">--请选择--</option>
+            <select id="bid">
+               
             </select>
         </td>
     </tr>
@@ -29,6 +29,7 @@
     <tr>
         <td>汽车类型：</td>
         <td>
+            <select id="cid"></select>
         </td>
     </tr>
     <tr>
@@ -53,6 +54,7 @@
     <tr>
         <td>汽车照片：</td>
         <td>
+            <input id="Image" type="file" />
         </td>
     </tr>
     <tr>
@@ -69,38 +71,40 @@
 
 <script>
 
-    $(
-        function () {
-            CarTypeBandSel();
-        }
-    );
-
-    function CarTypeBandSel() {
-
-    //$.ajax({
-    //    type: "Get",
-    //    url: "http://localhost:57894/api/zjlCarType5",
-    //    success: function (d) {
-    //        $("#select").empty(),
-
-    //        $.each(function () {
-    //            $("#select").append(
-    //                "<option value=" + item.CarTypeID + ">" + item.Type + "</option>");
-    //        });
-    //    },
-    //});
-
+    $(function () {
+        BandSelCarType();
+        BandSelCarBrand();
+    })
+    function BandSelCarType() {
         $.ajax({
-            type: "get",
-            url: "http://localhost:57894/api/zjlCarType5", //此次url改为真正需要的url
-            success: function (data, status) {
-                $.each(data, function (index, item) {
-                    $("#select").append(  //此处向select中循环绑定数据
-                        "<option value=" + item.CarTypeID + ">" + item.Type + "</option>");
-                });
-            },
-        });
+            url: 'http://localhost:57894/api/zjlCarType5/',
+            type: 'get',
+            dataType: 'json',
+            success: function (d) {
+                $("#bid").empty();
+                $("#bid").append("<option value=''>--请选择--</option>");
+                $(d).each(function () {
+                    var opt = "<option value=" + this.carTypeID + ">" + this.type + "</option>";
+                    $("#bid").append(opt);
+                })
+            }
+        })
+    }
 
+    function BandSelCarBrand() {
+        $.ajax({
+            url: 'http://localhost:57894/api/zjlCarBrand/',
+            type: 'get',
+            dataType: 'json',
+            success: function (d) {
+                $("#cid").empty();
+                $("#cid").append("<option value=''>--请选择--</option>");
+                $(d).each(function () {
+                    var opt = "<option value=" + this.carBrandID + ">" + this.brand + "</option>";
+                    $("#cid").append(opt);
+                })
+            }
+        })
     }
 
 
@@ -108,13 +112,13 @@
     {
         var obj = {};
         obj.uid = "1";
-        obj.Image = "11";
-        obj.bid = "1";
+        obj.Image = $("#Image").val();
+        obj.bid = $("#bid").val();
         obj.CarName = $("#CarName").val();
         obj.Years = $("#Years").val();
-        obj.cid = "1";
+        obj.cid = $("#cid").val();
         obj.CC = $("#CC").val();
-        obj.AMT = "1";
+        obj.AMT = $("#AMT1").click() == true ? "手动":"自动";
         obj.Price = $("#Price").val();
 
             $.ajax({

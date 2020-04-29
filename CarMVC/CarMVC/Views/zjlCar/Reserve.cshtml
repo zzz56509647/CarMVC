@@ -4,56 +4,96 @@
 
 
 
-<table class=" table table-borderless">
-    <tr>
-        <td>租车用途：</td>
-        <td>
-            <input type="text" id="Useing" placeholder="请填写租车用途 如：商用、自用..等" />
-        </td>
-    </tr>
-    <tr>
-        <td>取车时间：</td>
-        <td>
-            <input type="datetime" id="StartTime" />
-        </td>
-    </tr>
-    <tr>
-        <td>还车时间：</td>
-        <td>
-            <input type="datetime" id="EndTime" />
-        </td>
-    </tr>
-    <tr>
-        <td>是否配用司机：</td>
-        <td>
-            <input type="checkbox" id="Driver" />
+    <table class=" table table-borderless">
+        <tr>
+            <td>
+                车辆名字：
+            </td>
+            <td>
+                <span id="CarName"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                变速箱：
+            </td>
+            <td>
+                <span id="AMT"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>租车用途：</td>
+            <td>
+                <input type="text" id="Useing" placeholder="请填写租车用途 如：商用、自用..等" />
+            </td>
+        </tr>
+        <tr>
+            <td>取车时间：</td>
+            <td>
+                <input type="datetime" id="StartTime" />
+            </td>
+        </tr>
+        <tr>
+            <td>还车时间：</td>
+            <td>
+                <input type="datetime" id="EndTime" />
+            </td>
+        </tr>
+        <tr>
+            <td>是否配用司机：</td>
+            <td>
+                <input type="checkbox" id="Driver" />
 
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <input type="button" onclick="Reserve()" class="btn btn-success" value="预定" />
-        </td>
-        <td>
-            <input type="button" onclick="location.href='SoCar/Show()'" class="btn btn-warning" value="取消" />
-        </td>
-    </tr>
-</table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" onclick="Reserve()" class="btn btn-success" value="预定" />
+            </td>
+            <td>
+                <input type="button" onclick="location.href='SoCar/Show()'" class="btn btn-warning" value="取消" />
+            </td>
+        </tr>
+    </table>
 
 
-<script>
+    <script>
+
+    $(function(){
+        Show();
+    });
+
+    function Show() {
+          function show() {
+            $.ajax({
+                url: 'http://localhost:57894/api//' +@ViewContext.RouteData.Values["id"],
+                type: 'get',
+                dataType: 'json',
+                crossDomain: true,
+                success: function (d) {
+                    $("#OrdersID").val(d.OrdersID);
+                    $("#Reson").val(d.Reson);
+                    $("#Phone").val(d.Phone);
+
+                }
+            });
+        }
+    }
 
     function Reserve() {
         var obj = {};
 
         obj.Oid = "202004301";
         obj.uid = 1;
-        obj.CarInfoid = 1;
-        obj.Price = 5000;
+        obj.CarInfoid =  1;
+
 
         obj.Useing = $("#Useing").val();
         obj.StartTime = $("#StartTime").val();
         obj.EndTime = $("#EndTime").val();
+
+
+        obj.Price = (obj.EndTime - obj.StartTime)* 2;   // 单价用来反填获取
         obj.Driver = $("#Driver").click() == true ? "1" : "0";
 
 
@@ -76,4 +116,4 @@
 
         })
     }
-</script>
+    </script>
