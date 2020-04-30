@@ -68,7 +68,7 @@
     $(GetCars);
     function GetCars() {
         $.ajax({
-            url: 'http://localhost:57894/api/zjlCar',
+            url: 'http://localhost:57894/api/Get',
             type: 'get',
             dataType: 'json',
             success: function (data) {
@@ -88,9 +88,9 @@
 
 
     function SelectGetCars(keyword) {       
-
+        keyword = $("#takeKeyword").val();
         $.ajax({
-            url: 'http://localhost:57894/api/zjlCar/get',
+            url: 'http://localhost:57894/api/zjlCar/get?Name='+keyword,
             type: 'post',
             data: {
                 keyword: $("#takeKeyword").val(),
