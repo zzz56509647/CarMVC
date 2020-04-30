@@ -39,7 +39,7 @@
         </div>
     </div>
    
-    <table class="tab tab-pane">
+    <table class="table table-danger">
         <tr>
             <td>编号</td>
             <td>图片</td>
@@ -68,7 +68,7 @@
     $(GetCars);
     function GetCars() {
         $.ajax({
-            url: '',
+            url: 'http://localhost:57894/api/zjlCar',
             type: 'get',
             dataType: 'json',
             success: function (data) {
@@ -112,7 +112,8 @@
     }
 
     function Clear() {
-
+        location.href="/YcxCar/GetCars"
+        
     }
 
 
