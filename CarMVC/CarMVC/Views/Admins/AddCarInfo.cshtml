@@ -1,59 +1,59 @@
 ﻿
+    <table class="table table-bordered">
+        <tr>
+            <td>图片：</td>
+            <td><input id="Image" type="file" /></td>
 
-<table class="table table-bordered">
-    <tr>
-        <td>图片：</td>
-        <td><input id="Image" type="file" /></td>
+        </tr>
+        <tr>
+            <td>汽车品牌：</td>
+            <td>
+                <select id="bid"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>汽车名字：</td>
+            <td><input id="CarName" type="text" /></td>
 
-    </tr>
-    <tr>
-        <td>汽车品牌：</td>
-        <td>
-            <select id="bid"></select>
-        </td>
-    </tr>
-    <tr>
-        <td>汽车名字：</td>
-        <td><input id="CarName" type="text" /></td>
+        </tr>
+        <tr>
+            <td>汽车年份：</td>
+            <td><input id="Years" type="text" />年</td>
 
-    </tr>
-    <tr>
-        <td>汽车年份：</td>
-        <td><input id="Years" type="text" />年</td>
+        </tr>
+        <tr>
+            <td>汽车类型：</td>
+            <td>
+                <select id="cid"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>汽车排量：</td>
+            <td><input id="CC" type="text" /></td>
 
-    </tr>
-    <tr>
-        <td>汽车品牌：</td>
-        <td>
-            <select id="cid"></select>
-        </td>
-    </tr>
-    <tr>
-        <td>汽车排量：</td>
-        <td><input id="CC" type="text" /></td>
+        </tr>
+        <tr>
+            <td>数量：</td>
+            <td><input id="Count" type="number" min="1" /></td>
 
-    </tr>
-    <tr>
-        <td>数量：</td>
-        <td><input id="Count" type="number" min="1" /></td>
+        </tr>
+        <tr>
+            <td>档位：</td>
+            <td><input id="AMT" type="text" /></td>
 
-    </tr>
-    <tr>
-        <td>档位：</td>
-        <td><input id="AMT" type="text" /></td>
+        </tr>
+        <tr>
+            <td>日租单价：</td>
+            <td><input id="Price" type="text" /></td>
 
-    </tr>
-    <tr>
-        <td>日租单价：</td>
-        <td><input id="Price" type="text" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input id="Submit1" type="submit" value="添加" onclick="Add()" class="btn btn-dark" /></td>
+            <td></td>
+        </tr>
+    </table>
 
-    </tr>
-    <tr>
-        <td></td>
-        <td><input id="Submit1" type="submit" value="添加" onclick="Add()" class="btn btn-dark" /></td>
-        <td></td>
-    </tr>
-</table>
 
 @section scripts{
     <script>
@@ -95,8 +95,9 @@
 
 
         function Add() {
+
             var obj = {};
-            obj.Image = $("#Image").val();
+            
             obj.bid = $("#bid").val();
             obj.CarName = $("#CarName").val();
             obj.Years = $("#Years").val();
@@ -111,6 +112,11 @@
                 type: 'post',
                 dataType: 'json',
                 data: obj,
+                xhrFields: {
+                    withCredentials: true
+                },
+                async: true,
+                crossDomain: true,
                 success: function (d) {
                     if (d > 0) {
                         alert('添加成功！');
@@ -119,5 +125,7 @@
                 }
             })
         }
+
+        
     </script>
 }
