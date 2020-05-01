@@ -78,7 +78,7 @@
                             + '<td>' + this.amt + '</td>'
                             + '<td>' + this.price + '</td>'
                             + '<td>' + (this.vstate ? "是" : "否") + '</td>'
-                            + '<td>' + "<input id='Button1' type='button' value='审批' class='btn btn-danger' onclick=UptVa(" + this.vid + ") />"
+                            + '<td>' + (this.vstate == 1 ? "" : "<input id = 'Button1' type = 'button' value = '审批' class='btn btn-danger' onclick = UptVa(" + this.vid + ") />")
                             + '</td>'
                             + '</tr>';
                         $("#tb").append(line);
@@ -93,11 +93,10 @@
                 url: 'http://localhost:57894/api/Admins2/' + id,
                 type: 'put',
                 dataType: 'json',
-                crossDomain: true,
-                data: { id: id },
+                data: JSON.stringify({ VID: id }),
+                contentType: "application/json",
                 success: function (d) {
                     if (d > 0) {
-                        alert('已审批！');
                         Show();
                     }
                     else {
