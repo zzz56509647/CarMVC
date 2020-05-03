@@ -53,7 +53,6 @@
                 type: 'get',
                 dataType: 'json',
                 data: obj,
-                crossDomain: true,
                 success: function (d) {
 
                     $("#TotalCount").text(d.totalCount)
@@ -69,7 +68,7 @@
                         var line = '<tr>'
                             + '<td>' + this.vid + '</td>'
                             + '<td>' + this.uid + '</td>'
-                            + '<td>' + this.image + '</td>'
+                            + '<td><img src="' + this.image + '" alt="" width="200" height="150" /></td>'
                             + '<td>' + this.bid + '</td>'
                             + '<td>' + this.carName + '</td>'
                             + '<td>' + this.years + '</td>'
