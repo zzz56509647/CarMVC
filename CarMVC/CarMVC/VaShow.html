@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+<script src="D:\物联网\实训\CarMVC1\CarMVC\CarMVC\wwwroot\lib\jquery\dist\jquery.js"></script>
+
+<link href="D:\物联网\实训\CarMVC1\CarMVC\CarMVC\wwwroot\lib\bootstrap\dist\css\bootstrap.css" rel="stylesheet" />
+    <script>
+
+        var pageSize = 3;
+        var currentPage = 1;
+        var totalPage = 1;
+
+        $(function () {
+            Show(1);
+        })
+
+        function Show(page) {
+            var obj = {};
+            obj.currentPage = page;
+            obj.pageSize = pageSize;
+
+            $.ajax({
+                url: 'http://localhost:57894/api/Admins2',
+                type: 'get',
+                dataType: 'json',
+                data: obj,
+                crossDomain: true,
+                success: function (d) {
+
+                    $("#TotalCount").text(d.totalCount)
+                    $("#TotalPage").text(d.totalPage)
+                    $("#CurrentPage").text(d.currentPage)
+                    //最大页
+                    totalPage = d.totalPage;
+                    //当前页
+                    currentPage = d.currentPage;
+
+                    $("#tb").empty();
+                    $(d.vas).each(function () {
+                        var line = '<tr>'
+                            + '<td>' + this.vid + '</td>'
+                            + '<td>' + this.uid + '</td>'
+                            + '<td>' + this.image + '</td>'
+                            + '<td>' + this.bid + '</td>'
+                            + '<td>' + this.carName + '</td>'
+                            + '<td>' + this.years + '</td>'
+                            + '<td>' + this.cid + '</td>'
+                            + '<td>' + this.cc + '</td>'
+                            + '<td>' + this.amt + '</td>'
+                            + '<td>' + this.price + '</td>'
+                            + '<td>' + (this.vstate ? "是" : "否") + '</td>'
+                            + '<td>' + (this.vstate == 1 ? "" : "<input id = 'Button1' type = 'button' value = '审批' class='btn btn-danger' onclick = UptVa(" + this.vid + ") />")
+                            + '</td>'
+                            + '</tr>';
+                        $("#tb").append(line);
+                    })
+                }
+
+            })
+        }
+        //修改审批状态
+        function UptVa(id) {
+            $.ajax({
+                url: 'http://localhost:57894/api/Admins2/' + id,
+                type: 'put',
+                dataType: 'json',
+                data: JSON.stringify({ VID: id }),
+                contentType: "application/json",
+                success: function (d) {
+                    if (d > 0) {
+                        Show();
+                    }
+                    else {
+                        alert('操作失败！');
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <table class="table table-bordered">
+        <thead style="background-color: bisque">
+            <tr style="text-align: center">
+                <th>车辆序号</th>
+                <th>用户</th>
+                <th>图片</th>
+                <th>汽车品牌</th>
+                <th>汽车名字</th>
+                <th>汽车年份</th>
+                <th>汽车类型</th>
+                <th>汽车排量</th>
+                <th>档位</th>
+                <th>日租单价</th>
+                <th>是否审批</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="tb"></tbody>
+    </table>
+
+    <table class=" table-bordered table">
+        <tr>
+            <td>总记录数<span id="TotalCount"></span>条</td>
+            <td>总共<span id="TotalPage"></span>页</td>
+            <td>当前第<span id="CurrentPage"></span>页</td>
+            <td><a href="javascript:;" onclick="Show(1)">首页</a></td>
+            <td><a href="javascript:;" onclick="Show(currentPage-1)">上一页</a></td>
+            <td><a href="javascript:;" onclick="Show(currentPage+1)">下一页</a></td>
+            <td><a href="javascript:;" onclick="Show(totalPage)">尾页</a></td>
+        </tr>
+    </table>
+</body>
+</html>
