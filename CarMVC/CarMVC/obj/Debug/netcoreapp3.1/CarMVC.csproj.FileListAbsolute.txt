@@ -201,6 +201,8 @@ D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\tr\Microsof
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.csprojAssemblyReference.cache
+D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.csproj.CoreCompileInputs.cache
+D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.MvcApplicationPartsAssemblyInfo.cache
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.RazorAssemblyInfo.cache
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.RazorAssemblyInfo.cs
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.AssemblyInfoInputs.cache
@@ -442,7 +444,6 @@ L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\bin\Debug\netcoreapp3.
 L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.csprojAssemblyReference.cache
 L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.csproj.CoreCompileInputs.cache
 L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.MvcApplicationPartsAssemblyInfo.cache
 L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.RazorAssemblyInfo.cache
@@ -478,7 +479,4 @@ L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\obj\Debug\netcoreapp3.
 L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.dll
 L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.pdb
 L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.genruntimeconfig.cache
-D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\assets\data\search.json
-D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\Razor\Views\YcxCar\SelectCars.cshtml.g.cs
-D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\Sakura.AspNetCore.PagedList.dll
-D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\Sakura.AspNetCore.PagedList.Abstractions.dll
+L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\Razor\Views\User\AddUser.cshtml.g.cs
