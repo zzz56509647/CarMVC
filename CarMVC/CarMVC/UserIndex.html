@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
 <head>
     <title>国内领先的预约出行服务平台-百车汇租车</title>
 
@@ -42,7 +42,7 @@
                             <div class="uinArea" id="uinArea">
                                 <label class="input-tips" for="u">昵称：</label>
                                 <div class="inputOuter" id="uArea">
-                                    <input id="name" type="text" class="inputstyle"  />
+                                    <input id="name" type="text" name="username" class="inputstyle"  />
                                     <!--<input type="text" id="u" name="username" class="inputstyle" />-->
                                 </div>
                             </div>
@@ -98,22 +98,7 @@
                         </li>
 
                         <li>
-                            <label for="passwd" class="input-tips2">密码：</label>
-                            <div class="inputOuter2">
-                                <input type="password" id="passwd" name="passwd" maxlength="16" class="inputstyle2" />
-                            </div>
-
-                        </li>
-                        <li>
-                            <label for="passwd2" class="input-tips2">确认密码：</label>
-                            <div class="inputOuter2">
-                                <input type="password" id="passwd2" name="" maxlength="16" class="inputstyle2" />
-                            </div>
-
-                        </li>
-
-                        <li>
-                            <label for="qq" class="input-tips2">QQ：</label>
+                            <label for="qq" class="input-tips2">邮箱：</label>
                             <div class="inputOuter2">
 
                                 <input type="text" id="qq" name="qq" maxlength="10" class="inputstyle2" />
@@ -147,13 +132,14 @@
 
     //发送验证码
     function createcore() {
-        var Email = $("#mail").val();
-        var reg = "^\\s*([A-Za-z0-9_-]+(\\.\\w+)*@(\\w+\\.)+\\w{2,5})\\s*$";
+        //var Email = $("#mail").val();
 
-        if (Email.search(reg) == -1) {
-            alert("邮箱格式错误！");
-            return;
-        }
+        //        var reg = "^\\s*([A-Za-z0-9_-]+(\\.\\w+)*@(\\w+\\.)+\\w{2,5})\\s*$";
+
+        //if (Email.search(reg) == -1) {
+        //    alert("邮箱格式错误！");
+        //    return;
+        //}
         $.ajax({
             url: 'http://localhost:57894/api/user/SendMailMessage?Email=' + Email,
             type: 'get',

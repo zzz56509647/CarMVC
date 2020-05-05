@@ -1,4 +1,5 @@
-﻿@model IEnumerable<CarMVC.Models.AllCarThis>
+﻿@*@model IEnumerable<CarMVC.Models.AllCarThis>*@
+@model Sakura.AspNetCore.IPagedList<CarMVC.Models.AllCarThis>
 @{
     ViewData["Title"] = "GetCars";
 }
@@ -111,6 +112,15 @@
             }
         </tbody>
     </table>
+    <div class="row">
+        <div class="col-md-8">
+
+
+        </div>
+        <div>
+            <pager source="Model" />
+        </div>
+    </div>
 
 
 
