@@ -480,3 +480,5 @@ L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\obj\Debug\netcoreapp3.
 L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.pdb
 L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.genruntimeconfig.cache
 L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\Razor\Views\User\AddUser.cshtml.g.cs
+L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.csprojAssemblyReference.cache
+L:\实训一\百车汇汽车租赁系统mvc\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\Razor\Views\YcxCar\SelectCars.cshtml.g.cs
