@@ -5,7 +5,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using CarMVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
+using Sakura.AspNetCore;
 
 namespace CarMVC.Controllers
 {
@@ -16,7 +18,7 @@ namespace CarMVC.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult GetCars()
+        public IActionResult GetCars(int pageSize,int? page=1)
         {
             string url = "http://localhost:57894/CarY/getcar";
             HttpClient client = new HttpClient();
@@ -24,8 +26,9 @@ namespace CarMVC.Controllers
             HttpResponseMessage message = client.GetAsync(url).Result;
             string result = message.Content.ReadAsStringAsync().Result;
             List<AllCarThis> list = JsonConvert.DeserializeObject<List<AllCarThis>>(result);
-
-            return View(list.ToList());
+            pageSize = 3;
+            int pageNumber = page ?? 1;
+            return View(list.ToPagedList(pageSize,pageNumber));
         }
 
         public IActionResult SelectCars()
