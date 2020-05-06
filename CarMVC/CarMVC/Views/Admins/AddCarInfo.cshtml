@@ -1,8 +1,8 @@
-﻿@*<form enctype="multipart/form-data" id="formData">*@
+﻿
 <table class="table table-bordered">
     <tr>
         <td>图片：</td>
-        <td><input id="uploadInput" type="file" /></td>
+        <td><input id="Image" type="text" /></td>
 
     </tr>
     <tr>
@@ -53,19 +53,21 @@
         <td></td>
     </tr>
 </table>
-@*</form>*@
+
 
 @section scripts{
     <script>
         $(function () {
             BandSelCarType();
             BandSelCarBrand();
-        })
+        });
+
         function BandSelCarType() {
             $.ajax({
-                url: 'http://localhost:57894/api/zjlCarType5',
+                url: 'http://localhost:57894/api/Admins/CarTypes',
                 type: 'get',
                 dataType: 'json',
+                //contentType: "application/json",
                 success: function (d) {
                     $("#cid").empty();
                     $("#cid").append("<option value=''>--请选择--</option>");
@@ -79,9 +81,10 @@
 
         function BandSelCarBrand() {
             $.ajax({
-                url: 'http://localhost:57894/api/zjlCarBrand',
+                url: 'http://localhost:57894/api/Admins/CarBrands',
                 type: 'get',
                 dataType: 'json',
+                //contentType: "application/json",
                 success: function (d) {
                     $("#bid").empty();
                     $("#bid").append("<option value=''>--请选择--</option>");
@@ -94,56 +97,37 @@
         }
 
 
-            function Add() {
-                var obj = {};
-                obj.Image = "/Files/" + $("#uploadInput")[0].files[0].name;
-                obj.bid = $("#bid").val();
-                obj.CarName = $("#CarName").val();
-                obj.Years = $("#Years").val();
-                obj.cid = $("#cid").val();
-                obj.CC = $("#CC").val();
-                obj.Count = $("#Count").val();
-                obj.AMT = $("#AMT").val();
-                obj.Price = $("#Price").val();
+        function Add() {
+            var obj = {};
+            obj.Image = $("#Image").val();
+            obj.bid = $("#bid").val();
+            obj.CarName = $("#CarName").val();
+            obj.Years = $("#Years").val();
+            obj.cid = $("#cid").val();
+            obj.CC = $("#CC").val();
+            obj.Count = $("#Count").val();
+            obj.AMT = $("#AMT").val();
+            obj.Price = $("#Price").val();
 
-                $.ajax({
-                    url: 'http://localhost:57894/api/Admins/Post',
-                    type: 'post',
-                    dataType: 'json',
-                    data: obj,
-                    success: function (d) {
-                        if (d > 0) {
-                            alert('添加成功！');
-                            //Shang();
-                            location.href = '/yyhCar/OrdersShow';
-                        }
-                        else {
-                            alert('添加失败！');
-                        }
+            $.ajax({
+                url: 'http://localhost:57894/api/Admins/Post',
+                type: 'post',
+                //dataType: 'json',
+                data: JSON.stringify(obj),
+                contentType: "application/json",
+                success: function (d) {
+                    if (d > 0) {
+                        alert('添加成功！');
+                        //location.href = '/yyhCar/OrdersShow';
                     }
-                })
-            }
+                    else {
+                        alert('添加失败！');
+                    }
+                }
+            })
+        }
 
-            //function Shang() {
-            //    var fileUpload = $("#uploadInput")[0];
-            //    var file = fileUpload.files[0];
-            //    var data = new FormData();
-            //    data.append(file.name, file);
-            //    $.ajax({
-            //        type: "POST",
-            //        url: 'http://localhost:57894/api/Admins//UploadFile',
-            //        contentType: false,
-            //        processData: false,
-            //        data: data,
-            //        success: function (e) {
-            //            console.log(e);
-            //        },
-            //        error: function () {
-            //            console.log("error");
-            //        }
-            //    });
 
-            //}
     </script>
-    @*<script src="~/js/jquery.fileupload.js"></script>*@
+
 }
