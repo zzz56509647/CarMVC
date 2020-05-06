@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "N+WBnLY8kSvdGxzsApHvUn43YlpMassEcHrR9zQUR4rBksLRPtXCZP3ENrhq0cWQtWC+2CLxIP8slFnCD08WPA==",
+  "dgSpecHash": "09cwTGBt6cqfuAJz5kVPoZyy96rzOf+Ocv50nFXO3oSohOD/vsEu4+E5a6BKuWZ6iuAAChAJ7KxKtco7hqT+xg==",
   "success": true,
   "projectFilePath": "D:\\A_Githup\\thisOnline\\CarMvc_\\CarMVC\\CarMVC\\CarMVC.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,9 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\96549\\.nuget\\packages\\sakura.aspnetcore.mvc.pagedlist\\3.0.2\\sakura.aspnetcore.mvc.pagedlist.3.0.2.nupkg.sha512",
+    "C:\\Users\\96549\\.nuget\\packages\\sakura.aspnetcore.pagedlist\\2.0.2\\sakura.aspnetcore.pagedlist.2.0.2.nupkg.sha512",
+    "C:\\Users\\96549\\.nuget\\packages\\sakura.aspnetcore.pagedlist.abstractions\\3.0.0\\sakura.aspnetcore.pagedlist.abstractions.3.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\96549\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
@@ -72,6 +75,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
+    "C:\\Users\\96549\\.nuget\\packages\\system.linq.queryable\\4.3.0\\system.linq.queryable.4.3.0.nupkg.sha512",
     "C:\\Users\\96549\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.net.http\\4.3.0\\system.net.http.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.net.primitives\\4.3.0\\system.net.primitives.4.3.0.nupkg.sha512",
