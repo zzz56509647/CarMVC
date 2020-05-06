@@ -362,3 +362,7 @@ D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\Razor\Views
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\Razor\Views\YcxCar\SelectCars.cshtml.g.cs
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\Sakura.AspNetCore.PagedList.dll
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\Sakura.AspNetCore.PagedList.Abstractions.dll
+D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\Sakura.AspNetCore.Mvc.PagedList.dll
+D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.csproj.CoreCompileInputs.cache
+D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.MvcApplicationPartsAssemblyInfo.cs
+D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.MvcApplicationPartsAssemblyInfo.cache
