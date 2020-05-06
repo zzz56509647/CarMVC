@@ -686,44 +686,6 @@
           }
         }
       },
-      "Sakura.AspNetCore.Mvc.PagedList/3.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Sakura.AspNetCore.PagedList.Abstractions": "3.0.0"
-        },
-        "compile": {
-          "lib/netcoreapp3.0/Sakura.AspNetCore.Mvc.PagedList.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Sakura.AspNetCore.Mvc.PagedList.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "Sakura.AspNetCore.PagedList/2.0.2": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "Sakura.AspNetCore.PagedList.Abstractions": "2.0.1",
-          "System.Linq.Queryable": "4.3.0"
-        },
-        "compile": {
-          "lib/netstandard1.0/Sakura.AspNetCore.PagedList.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/Sakura.AspNetCore.PagedList.dll": {}
-        }
-      },
-      "Sakura.AspNetCore.PagedList.Abstractions/3.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Sakura.AspNetCore.PagedList.Abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Sakura.AspNetCore.PagedList.Abstractions.dll": {}
-        }
-      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1152,25 +1114,6 @@
         },
         "runtime": {
           "lib/netstandard1.6/System.Linq.Expressions.dll": {}
-        }
-      },
-      "System.Linq.Queryable/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0"
-        },
-        "compile": {
-          "ref/netstandard1.0/System.Linq.Queryable.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Linq.Queryable.dll": {}
         }
       },
       "System.Memory/4.5.3": {
@@ -2707,7 +2650,7 @@
       ]
     },
     "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "LdIvj7Bi2jiaNTqY/ezZGVXHe1KI5fjLSI026O1TjVzsmdgTP/zTF+f3nwHCjwttyhsPBEiswv0PekimPWZwWg==",
+      "sha512": "c3YNH1GQJbfIPJeCnr4avseugSqPrxwIqzthYyZDN6EuOyNOzq+y2KSUfRcXauya1sF4foESTgwM5e1A8arAKw==",
       "type": "package",
       "path": "runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -2733,7 +2676,7 @@
       ]
     },
     "runtime.native.System.IO.Compression/4.3.0": {
-      "sha512": "b+V9JC/Ii3sR659flBeaBJww111425tgjcDS1k+hqV4sGh9FALRDBvJnDtQ895gAzpPTUOFDHdqaZ2Et7BpZMg==",
+      "sha512": "INBPonS5QPEgn7naufQFXJEp3zX6L4bwHgJ/ZH78aBTpeNfQMtf7C6VrAFhlq2xxWBveIOWyFzQjJ8XzHMhdOQ==",
       "type": "package",
       "path": "runtime.native.system.io.compression/4.3.0",
       "files": [
@@ -2813,11 +2756,12 @@
       ]
     },
     "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple/4.3.0": {
-      "sha512": "Kh9W4agE0r/hK8AX1LvyQI2NrKHBL8pO0gRoDTdDb0LL6Ta1Z2OtFx3lOaAE0ZpCUc/dt9Wzs3rA7a3IsKdOVA==",
+      "sha512": "kVXCuMTrTlxq4XOOMAysuNwsXWpYeboGddNGpIgNSZmv1b6r/s/DPk0fYMB7Q5Qo4bY68o48jt4T4y5BVecbCQ==",
       "type": "package",
       "path": "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple.4.3.0.nupkg.sha512",
@@ -2852,7 +2796,7 @@
       ]
     },
     "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "JGc0pAWRE8lB4Ucygk2pYSKbUPLlAIq6Bczf5/WF2D/VKJEPtYlVUMxk8fbl1zRfTWzSHi+VcFZlaPlWiNxeKg==",
+      "sha512": "ytoewC6wGorL7KoCAvRfsgoJPJbNq+64k2SqW6JcOAebWsFUvCCYgfzQMrnpvPiEl4OrblUlhF2ji+Q1+SVLrQ==",
       "type": "package",
       "path": "runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -2888,51 +2832,6 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
-      ]
-    },
-    "Sakura.AspNetCore.Mvc.PagedList/3.0.2": {
-      "sha512": "a2CcMxe7MAGEdhQI130X36jJvZ6+SwALf6xxXi0yjGdKhfVrf0w/fcr8g3jWg97dlnl+whhVjW+fC0+nqKyF4w==",
-      "type": "package",
-      "path": "sakura.aspnetcore.mvc.pagedlist/3.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net451/Sakura.AspNetCore.Mvc.PagedList.dll",
-        "lib/net451/Sakura.AspNetCore.Mvc.PagedList.xml",
-        "lib/netcoreapp3.0/Sakura.AspNetCore.Mvc.PagedList.dll",
-        "lib/netcoreapp3.0/Sakura.AspNetCore.Mvc.PagedList.xml",
-        "lib/netstandard1.6/Sakura.AspNetCore.Mvc.PagedList.dll",
-        "lib/netstandard1.6/Sakura.AspNetCore.Mvc.PagedList.xml",
-        "sakura.aspnetcore.mvc.pagedlist.3.0.2.nupkg.sha512",
-        "sakura.aspnetcore.mvc.pagedlist.nuspec"
-      ]
-    },
-    "Sakura.AspNetCore.PagedList/2.0.2": {
-      "sha512": "anCFSp+RjoFN2oKA/4NuwIrD4YXpVE6EYo/Jtp+M3NYZaeqzJelAbvPnzgnmqx9codtsxTGy4tM6z5wVC+F4iQ==",
-      "type": "package",
-      "path": "sakura.aspnetcore.pagedlist/2.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard1.0/Sakura.AspNetCore.PagedList.dll",
-        "lib/netstandard1.0/Sakura.AspNetCore.PagedList.xml",
-        "sakura.aspnetcore.pagedlist.2.0.2.nupkg.sha512",
-        "sakura.aspnetcore.pagedlist.nuspec"
-      ]
-    },
-    "Sakura.AspNetCore.PagedList.Abstractions/3.0.0": {
-      "sha512": "q/irVIKKZFyeg/QCBvsFXqGTWHPFZmoQQQ6XlKHM2XGUQNQIMIarxKCznOmXJpF9KBmRohLfwDMraGgV2uXRiQ==",
-      "type": "package",
-      "path": "sakura.aspnetcore.pagedlist.abstractions/3.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netcoreapp3.0/Sakura.AspNetCore.PagedList.Abstractions.dll",
-        "lib/netcoreapp3.0/Sakura.AspNetCore.PagedList.Abstractions.xml",
-        "lib/netstandard1.0/Sakura.AspNetCore.PagedList.Abstractions.dll",
-        "lib/netstandard1.0/Sakura.AspNetCore.PagedList.Abstractions.xml",
-        "sakura.aspnetcore.pagedlist.abstractions.3.0.0.nupkg.sha512",
-        "sakura.aspnetcore.pagedlist.abstractions.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -4070,65 +3969,6 @@
         "runtimes/aot/lib/netcore50/System.Linq.Expressions.dll",
         "system.linq.expressions.4.3.0.nupkg.sha512",
         "system.linq.expressions.nuspec"
-      ]
-    },
-    "System.Linq.Queryable/4.3.0": {
-      "sha512": "In1Bmmvl/j52yPu3xgakQSI0YIckPUr870w4K5+Lak3JCCa8hl+my65lABOuKfYs4ugmZy25ScFerC4nz8+b6g==",
-      "type": "package",
-      "path": "system.linq.queryable/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/monoandroid10/_._",
-        "lib/monotouch10/_._",
-        "lib/net45/_._",
-        "lib/netcore50/System.Linq.Queryable.dll",
-        "lib/netstandard1.3/System.Linq.Queryable.dll",
-        "lib/portable-net45+win8+wp8+wpa81/_._",
-        "lib/win8/_._",
-        "lib/wp80/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/monoandroid10/_._",
-        "ref/monotouch10/_._",
-        "ref/net45/_._",
-        "ref/netcore50/System.Linq.Queryable.dll",
-        "ref/netcore50/System.Linq.Queryable.xml",
-        "ref/netcore50/de/System.Linq.Queryable.xml",
-        "ref/netcore50/es/System.Linq.Queryable.xml",
-        "ref/netcore50/fr/System.Linq.Queryable.xml",
-        "ref/netcore50/it/System.Linq.Queryable.xml",
-        "ref/netcore50/ja/System.Linq.Queryable.xml",
-        "ref/netcore50/ko/System.Linq.Queryable.xml",
-        "ref/netcore50/ru/System.Linq.Queryable.xml",
-        "ref/netcore50/zh-hans/System.Linq.Queryable.xml",
-        "ref/netcore50/zh-hant/System.Linq.Queryable.xml",
-        "ref/netstandard1.0/System.Linq.Queryable.dll",
-        "ref/netstandard1.0/System.Linq.Queryable.xml",
-        "ref/netstandard1.0/de/System.Linq.Queryable.xml",
-        "ref/netstandard1.0/es/System.Linq.Queryable.xml",
-        "ref/netstandard1.0/fr/System.Linq.Queryable.xml",
-        "ref/netstandard1.0/it/System.Linq.Queryable.xml",
-        "ref/netstandard1.0/ja/System.Linq.Queryable.xml",
-        "ref/netstandard1.0/ko/System.Linq.Queryable.xml",
-        "ref/netstandard1.0/ru/System.Linq.Queryable.xml",
-        "ref/netstandard1.0/zh-hans/System.Linq.Queryable.xml",
-        "ref/netstandard1.0/zh-hant/System.Linq.Queryable.xml",
-        "ref/portable-net45+win8+wp8+wpa81/_._",
-        "ref/win8/_._",
-        "ref/wp80/_._",
-        "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.linq.queryable.4.3.0.nupkg.sha512",
-        "system.linq.queryable.nuspec"
       ]
     },
     "System.Memory/4.5.3": {
@@ -5347,7 +5187,7 @@
       ]
     },
     "System.Security.Cryptography.Csp/4.3.0": {
-      "sha512": "yO2k5o+Z+DiFRBvvB9vdRRAGHi6bm02M9OWXfCqQ8K0UxD3Woc3svQheZfb7PoTEFs0kGacO0IzzMWsb6Mkeow==",
+      "sha512": "X4s/FCkEUnRGnwR3aSfVIkldBmtURMhmexALNTwpjklzxWU7yjMk7GHLKOZTNkgnWnE0q7+BCf9N2LVRWxewaA==",
       "type": "package",
       "path": "system.security.cryptography.csp/4.3.0",
       "files": [
@@ -5418,7 +5258,7 @@
       ]
     },
     "System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "vOYy7Jv9KsG3ld2hLt0GoERd82SZi4BelrbXLwI9yFBYX7kpbvUCWYo4eyevk47cuJXZ9ZLVAryANcc7iY71aA==",
+      "sha512": "h4CEgOgv5PKVF/HwaHzJRiVboL2THYCou97zpmhjghx5frc7fIvlkY1jL+lnIQyChrJDMNEXS6r7byGif8Cy4w==",
       "type": "package",
       "path": "system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -6155,31 +5995,29 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.2",
-      "Sakura.AspNetCore.Mvc.PagedList >= 3.0.2",
-      "Sakura.AspNetCore.PagedList >= 2.0.2"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\张凯\\.nuget\\packages\\": {},
-    "D:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\Lenovo\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\物联网\\实训\\CarMVC1\\CarMVC\\CarMVC\\CarMVC.csproj",
+      "projectUniqueName": "F:\\实训1\\MvcCarCar\\CarMVC\\CarMVC\\CarMVC.csproj",
       "projectName": "CarMVC",
-      "projectPath": "D:\\物联网\\实训\\CarMVC1\\CarMVC\\CarMVC\\CarMVC.csproj",
-      "packagesPath": "C:\\Users\\张凯\\.nuget\\packages\\",
-      "outputPath": "D:\\物联网\\实训\\CarMVC1\\CarMVC\\CarMVC\\obj\\",
+      "projectPath": "F:\\实训1\\MvcCarCar\\CarMVC\\CarMVC\\CarMVC.csproj",
+      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+      "outputPath": "F:\\实训1\\MvcCarCar\\CarMVC\\CarMVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\张凯\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -6207,14 +6045,6 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.1.2, )"
-          },
-          "Sakura.AspNetCore.Mvc.PagedList": {
-            "target": "Package",
-            "version": "[3.0.2, )"
-          },
-          "Sakura.AspNetCore.PagedList": {
-            "target": "Package",
-            "version": "[2.0.2, )"
           }
         },
         "imports": [
@@ -6235,7 +6065,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
