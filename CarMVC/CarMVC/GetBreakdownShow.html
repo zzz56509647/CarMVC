@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        body {
+            height: 100%;
+            width: 100%;
+            background-image: url(Images/bg11.jpg);
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 50px;
+            left: 100px;
+            /*background-size: cover;
+        position: absolute;
+        overflow: hidden;*/
+        }
+    </style>
+    <script src="wwwroot\lib\jquery\dist\jquery.js"></script>
+    <link href="wwwroot\lib\bootstrap\dist\css\bootstrap.css" rel="stylesheet" />
+
+    <script>
+        $(function () {
+            Show();
+        })
+
+        function Show() {
+            var id = location.search;
+            id = id.substr(id.indexOf('=') + 1);
+
+            $.ajax({
+                url: 'http://localhost:57894/api/Admins3/' + id,
+                type: 'get',
+                dataType: 'json',
+                crossDomain: true,
+                success: function (d) {
+                    $("#OrdersID").val(d.ordersID);
+                    $("#Reson").val(d.reson);
+                    $("#Phone").val(d.phone);
+
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <!--<div>
+        订单序号：<div id="OrdersID"></div>
+    </div>
+
+    <div>
+        故障原因：<div id="Reson"></div>
+    </div>
+
+    <div>
+        联系电话：<div id="Phone"></div>
+    </div>-->
+    <table class="table">
+
+        <tr>
+            <td>订单序号：</td>
+            <td>
+                <input id="OrdersID" type="text" readonly="readonly" /></td>
+        </tr>
+        <tr>
+            <td>故障原因：</td>
+            <td>
+                <input id="Reson" type="text" readonly="readonly" /></td>
+
+        </tr>
+        <tr>
+            <td>联系电话：</td>
+            <td>
+                <input id="Phone" type="text" readonly="readonly" /></td>
+
+        </tr>
+    </table>
+</body>
+</html>

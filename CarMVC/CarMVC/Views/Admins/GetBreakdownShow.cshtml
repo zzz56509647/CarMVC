@@ -23,15 +23,18 @@
         })
 
         function show() {
+            var id = location.search;
+            id = id.substr(id.indexOf('=') + 1);
+
             $.ajax({
-                url: 'http://localhost:57894/api/Admins/' +@ViewContext.RouteData.Values["id"],
+                url: 'http://localhost:57894/api/Admins3/' + id,
                 type: 'get',
                 dataType: 'json',
                 crossDomain: true,
                 success: function (d) {
-                    $("#OrdersID").val(d.OrdersID);
-                    $("#Reson").val(d.Reson);
-                    $("#Phone").val(d.Phone);
+                    $("#OrdersID").val(d.ordersID);
+                    $("#Reson").val(d.reson);
+                    $("#Phone").val(d.phone);
 
                 }
             });

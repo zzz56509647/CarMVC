@@ -1,8 +1,7 @@
 ﻿
-
 <table class="table table-bordered">
     <thead style="background-color:bisque">
-        <tr style="text-align:center">
+        <tr style="text-align:center;">
             <th>车辆序号</th>
             <th>用户</th>
             <th>图片</th>
@@ -53,7 +52,6 @@
                 type: 'get',
                 dataType: 'json',
                 data: obj,
-                crossDomain: true,
                 success: function (d) {
 
                     $("#TotalCount").text(d.totalCount)
@@ -66,10 +64,10 @@
 
                     $("#tb").empty();
                     $(d.vas).each(function () {
-                        var line = '<tr>'
+                        var line = '<tr style="text-align: center;vertical-align:auto">'
                             + '<td>' + this.vid + '</td>'
                             + '<td>' + this.uid + '</td>'
-                            + '<td>' + this.image + '</td>'
+                            + '<td><img src="' + this.image + '" alt="" width="100" height="60" /></td>'
                             + '<td>' + this.bid + '</td>'
                             + '<td>' + this.carName + '</td>'
                             + '<td>' + this.years + '</td>'

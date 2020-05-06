@@ -1,10 +1,11 @@
 ﻿
 <table>
     <tr>
-        @*<td><input type="radio" value="1"  name="Hitch" />正常单</td>
-            <td><input type="radio" value="0"  name="Hitch" />故障单</td>*@
-        <td><input id="Submit1" type="submit" value="正常单√" onclick="Show1()" class="btn btn-primary" /></td>
-        <td><input id="Submit1" type="submit" value="故障单×" onclick="Show2()" class="btn btn-danger" /></td>
+        @*<td><input id="Radio1" type="radio" value="1" name="Hitch" />正常单√</td>
+        <td><input id="Radio2" type="radio" value="2" name="Hitch" />故障单×</td>
+        <td><input id="Submit1" type="submit" value="查询" onclick="Show()" class="btn btn-dark" /></td>*@
+        @*<td><input id="Submit1" type="button" value="正常单√" onclick="Show1()" class="btn btn-primary" /></td>
+            <td><input id="Submit2" type="button" value="故障单×" onclick="Show2()" class="btn btn-danger" /></td>*@
         <td><input id="Submit1" type="submit" value="新增车辆+" onclick="location.href='/Admins/AddCarInfo'" class="btn btn-success" /></td>
     </tr>
 </table>
@@ -59,7 +60,7 @@
             obj.pageSize = pageSize;
 
             $.ajax({
-                url: 'http://localhost:57894/api/Admins/',
+                url: 'http://localhost:57894/api/Admins/Get',
                 type: 'get',
                 dataType: 'json',
                 data: obj,
@@ -78,18 +79,18 @@
                     $("#tb").empty();
                     $(d.orders).each(function () {
                         var line = '<tr>'
-                            + '<td>' + this.OrdersID + '</td>'
-                            + '<td>' + this.Oid + '</td>'
-                            + '<td>' + this.Name + '</td>' //有待改动
-                            + '<td>' + this.CarName + '</td>'
-                            + '<td>' + this.Useing + '</td>'
-                            + '<td>' + this.StartTime + '</td>'
-                            + '<td>' + this.EndTime + '</td>'
-                            + '<td>' + (this.Driver ? "是" : "否") + '</td>'
-                            + '<td>' + this.Price + '</td>'
-                            + '<td>' + (this.ZT == 1 ? "您已预定" : (this.ZT == 2 ? "立刻上路" : "取消订单")) + '</td>'
-                            + '<td>' + (this.Hitch == 1 ? "暂无问题" : (this.Hitch == 2 ? "故障申请" : (this.Hitch == 3 ? "报修通过" : "有待商议"))) + '</td>'
-                            + '<td>' + (this.Hitch == 1 ? "" : "<input id='Button1' type='button' value='报修原因' class='btn btn-danger' onclick=GetBreakdown(" + this.BreakdownID + ") />" + '&nbsp;' + "<input id='Button1' type='button' value='报修通过' class='btn btn-success' onclick=UptAgree(" + this.OrdersID + ") />" + '&nbsp;' + "<input id='Button1' type='button' value='有待商议' onclick=UptDisAgree(" + this.OrdersID + ") />")
+                            + '<td>' + this.ordersID + '</td>'
+                            + '<td>' + this.oid + '</td>'
+                            + '<td>' + this.uid + '</td>' //有待改动
+                            + '<td>' + this.carName + '</td>'
+                            + '<td>' + this.useing + '</td>'
+                            + '<td>' + this.startTime + '</td>'
+                            + '<td>' + this.endTime + '</td>'
+                            + '<td>' + (this.driver ? "是" : "否") + '</td>'
+                            + '<td>' + this.price + '</td>'
+                            + '<td>' + (this.zt == 1 ? "您已预定" : (this.zt == 2 ? "立刻上路" : "取消订单")) + '</td>'
+                            + '<td>' + (this.hitch == 1 ? "暂无问题" : (this.hitch == 2 ? "故障申请" : (this.hitch == 3 ? "报修通过" : "有待商议"))) + '</td>'
+                            + '<td>' + (this.hitch == 1 ? "" : "<input id='Button1' type='button' value='报修原因' class='btn btn-danger' onclick=GetBreakdown(" + this.ordersID + ") />" + '&nbsp;' + "<input id='Button1' type='button' value='报修通过' class='btn btn-success' onclick=UptAgree(" + this.ordersID + ") />" + '&nbsp;' + "<input id='Button1' class='btn btn-primary' type='button' value='有待商议' onclick=UptDisAgree(" + this.ordersID + ") />")
                             + '</td>'
                             + '</tr>';
                         $("#tb").append(line);
@@ -99,102 +100,102 @@
             })
         }
 
-        function Show1(page) {
+        //function Show1(page) {
 
-            var obj = {};
-            obj.currentPage = page;
-            obj.pageSize = pageSize;
+        //    var obj = {};
+        //    obj.currentPage = page;
+        //    obj.pageSize = pageSize;
 
-            $.ajax({
-                url: 'http://localhost:57894/api/Admins/',
-                type: 'get',
-                dataType: 'json',
-                data: obj,
-                async: true,
-                crossDomain: true,
-                success: function (d) {
+        //    $.ajax({
+        //        url: 'http://localhost:57894/api/Admins/Get',
+        //        type: 'get',
+        //        dataType: 'json',
+        //        data: obj,
+        //        async: true,
+        //        crossDomain: true,
+        //        success: function (d) {
 
-                    $("#TotalCount").text(d.totalCount)
-                    $("#TotalPage").text(d.totalPage)
-                    $("#CurrentPage").text(d.currentPage)
-                    //最大页
-                    totalPage = d.totalPage;
-                    //当前页
-                    currentPage = d.currentPage;
+        //            $("#TotalCount").text(d.totalCount)
+        //            $("#TotalPage").text(d.totalPage)
+        //            $("#CurrentPage").text(d.currentPage)
+        //            //最大页
+        //            totalPage = d.totalPage;
+        //            //当前页
+        //            currentPage = d.currentPage;
 
-                    if (this.Hitch == 1) {
-                        $("#tb").empty();
-                        $(d.orders).each(function () {
-                            var line = '<tr>'
-                                + '<td>' + this.OrdersID + '</td>'
-                                + '<td>' + this.Oid + '</td>'
-                                + '<td>' + this.Name + '</td>' //有待改动
-                                + '<td>' + this.CarName + '</td>'
-                                + '<td>' + this.Useing + '</td>'
-                                + '<td>' + this.StartTime + '</td>'
-                                + '<td>' + this.EndTime + '</td>'
-                                + '<td>' + (this.Driver ? "是" : "否") + '</td>'
-                                + '<td>' + this.Price + '</td>'
-                                + '<td>' + (this.ZT == 1 ? "您已预定" : (this.ZT == 2 ? "立刻上路" : "取消订单")) + '</td>'
-                                + '<td>' + (this.Hitch == 1 ? "暂无问题" : (this.Hitch == 2 ? "故障申请" : (this.Hitch == 3 ? "报修通过" : "有待商议"))) + '</td>'
-                                + '<td>' + (this.Hitch == 1 ? "" : "<input id='Button1' type='button' value='报修原因' class='btn btn-danger' onclick=GetBreakdown(" + this.BreakdownID + ") />" + '&nbsp;' + "<input id='Button1' type='button' value='报修通过' class='btn btn-success' onclick=UptAgree(" + this.OrdersID + ") />" + '&nbsp;' + "<input id='Button1' type='button' value='有待商议' onclick=UptDisAgree(" + this.OrdersID + ") />")
-                                + '</td>'
-                                + '</tr>';
-                            $("#tb").append(line);
-                        })
-                    }
-                }
+        //            if (this.hitch == 1) {
+        //                $("#tb").empty();
+        //                $(d.orders).each(function () {
+        //                    var line = '<tr>'
+        //                        + '<td>' + this.ordersID + '</td>'
+        //                        + '<td>' + this.oid + '</td>'
+        //                        + '<td>' + this.uid + '</td>' //有待改动
+        //                        + '<td>' + this.carName + '</td>'
+        //                        + '<td>' + this.useing + '</td>'
+        //                        + '<td>' + this.startTime + '</td>'
+        //                        + '<td>' + this.endTime + '</td>'
+        //                        + '<td>' + (this.driver ? "是" : "否") + '</td>'
+        //                        + '<td>' + this.price + '</td>'
+        //                        + '<td>' + (this.zt == 1 ? "您已预定" : (this.zt == 2 ? "立刻上路" : "取消订单")) + '</td>'
+        //                        + '<td>' + (this.hitch == 1 ? "暂无问题" : (this.hitch == 2 ? "故障申请" : (this.hitch == 3 ? "报修通过" : "有待商议"))) + '</td>'
+        //                        + '<td>' + (this.hitch == 1 ? "" : "<input id='Button1' type='button' value='报修原因' class='btn btn-danger' onclick=GetBreakdown(" + this.ordersID + ") />" + '&nbsp;' + "<input id='Button1' type='button' value='报修通过' class='btn btn-success' onclick=UptAgree(" + this.OrdersID + ") />" + '&nbsp;' + "<input id='Button1' class='btn btn-primary' type='button' value='有待商议' onclick=UptDisAgree(" + this.OrdersID + ") />")
+        //                        + '</td>'
+        //                        + '</tr>';
+        //                    $("#tb").append(line);
+        //                })
+        //            }
+        //        }
 
-            })
-        }
+        //    })
+        //}
 
-        function Show2(page) {
+        //function Show2(page) {
 
-            var obj = {};
-            obj.currentPage = page;
-            obj.pageSize = pageSize;
+        //    var obj = {};
+        //    obj.currentPage = page;
+        //    obj.pageSize = pageSize;
 
-            $.ajax({
-                url: 'http://localhost:57894/api/Admins/',
-                type: 'get',
-                dataType: 'json',
-                async: true,
-                crossDomain: true,
-                success: function (d) {
+        //    $.ajax({
+        //        url: 'http://localhost:57894/api/Admins/Get',
+        //        type: 'get',
+        //        dataType: 'json',
+        //        async: true,
+        //        crossDomain: true,
+        //        success: function (d) {
 
-                    $("#TotalCount").text(d.totalCount)
-                    $("#TotalPage").text(d.totalPage)
-                    $("#CurrentPage").text(d.currentPage)
-                    //最大页
-                    totalPage = d.totalPage;
-                    //当前页
-                    currentPage = d.currentPage;
+        //            $("#TotalCount").text(d.totalCount)
+        //            $("#TotalPage").text(d.totalPage)
+        //            $("#CurrentPage").text(d.currentPage)
+        //            //最大页
+        //            totalPage = d.totalPage;
+        //            //当前页
+        //            currentPage = d.currentPage;
 
-                    if (this.Hitch == 2) {
-                        $("#tb").empty();
-                        $(d.orders).each(function () {
-                            var line = '<tr>'
-                                + '<td>' + this.OrdersID + '</td>'
-                                + '<td>' + this.Oid + '</td>'
-                                + '<td>' + this.Name + '</td>' //有待改动
-                                + '<td>' + this.CarName + '</td>'
-                                + '<td>' + this.Useing + '</td>'
-                                + '<td>' + this.StartTime + '</td>'
-                                + '<td>' + this.EndTime + '</td>'
-                                + '<td>' + (this.Driver ? "是" : "否") + '</td>'
-                                + '<td>' + this.Price + '</td>'
-                                + '<td>' + (this.ZT == 1 ? "您已预定" : (this.ZT == 2 ? "立刻上路" : "取消订单")) + '</td>'
-                                + '<td>' + (this.Hitch == 1 ? "暂无问题" : (this.Hitch == 2 ? "故障申请" : (this.Hitch == 3 ? "报修通过" : "有待商议"))) + '</td>'
-                                + '<td>' + (this.Hitch == 1 ? null : "<input id='Button1' type='button' value='报修原因' class='btn btn-danger' onclick=GetBreakdown(" + this.BreakdownID + ") />" + '&nbsp;' + "<input id='Button1' type='button' value='报修通过' class='btn btn-success' onclick=UptAgree(" + this.OrdersID + ") />" + '&nbsp;' + "<input id='Button1' type='button' value='有待商议' onclick=UptDisAgree(" + this.OrdersID + ") />")
-                                + '</td>'
-                                + '</tr>';
-                            $("#tb").append(line);
-                        })
-                    }
-                }
+        //            if (this.hitch == 2) {
+        //                $("#tb").empty();
+        //                $(d.orders).each(function () {
+        //                    var line = '<tr>'
+        //                        + '<td>' + this.ordersID + '</td>'
+        //                        + '<td>' + this.oid + '</td>'
+        //                        + '<td>' + this.uid + '</td>' //有待改动
+        //                        + '<td>' + this.carName + '</td>'
+        //                        + '<td>' + this.useing + '</td>'
+        //                        + '<td>' + this.startTime + '</td>'
+        //                        + '<td>' + this.endTime + '</td>'
+        //                        + '<td>' + (this.driver ? "是" : "否") + '</td>'
+        //                        + '<td>' + this.price + '</td>'
+        //                        + '<td>' + (this.zt == 1 ? "您已预定" : (this.zt == 2 ? "立刻上路" : "取消订单")) + '</td>'
+        //                        + '<td>' + (this.hitch == 1 ? "暂无问题" : (this.hitch == 2 ? "故障申请" : (this.hitch == 3 ? "报修通过" : "有待商议"))) + '</td>'
+        //                        + '<td>' + (this.hitch == 1 ? "" : "<input id='Button1' type='button' value='报修原因' class='btn btn-danger' onclick=GetBreakdown(" + this.ordersID + ") />" + '&nbsp;' + "<input id='Button1' type='button' value='报修通过' class='btn btn-success' onclick=UptAgree(" + this.OrdersID + ") />" + '&nbsp;' + "<input id='Button1' class='btn btn-primary' type='button' value='有待商议' onclick=UptDisAgree(" + this.OrdersID + ") />")
+        //                        + '</td>'
+        //                        + '</tr>';
+        //                    $("#tb").append(line);
+        //                })
+        //            }
+        //        }
 
-            })
-        }
+        //    })
+        //}
         //跳转到故障原因
         function GetBreakdown(id) {
             location.href = "/Admins/GetBreakdownShow?id=" + id;
@@ -202,7 +203,7 @@
         //修改状态
         function UptAgree(id) {
             $.ajax({
-                url: 'http://localhost:57894/api/Admins/' + id,
+                url: 'http://localhost:57894/api/Admins/Put/' + id,
                 type: 'put',
                 dataType: 'json',
                 data: JSON.stringify({ OrdersID: id }),
@@ -235,6 +236,6 @@
                 }
             })
         }
-                //有待改动"<input id='Button1' type='button' value='报修原因' class='btn btn-danger' onclick=GetBreakdown(" + this.BreakdownID + ") />" + '&nbsp;' + "<input id='Button1' type='button' value='报修通过' class='btn btn-success' onclick=UptAgree(" + this.OrdersID + ") />" + '&nbsp;' + "<input id='Button1' type='button' value='有待商议' onclick=UptDisAgree(" + this.OrdersID + ") />"
+                                    //有待改动"<input id='Button1' type='button' value='报修原因' class='btn btn-danger' onclick=GetBreakdown(" + this.BreakdownID + ") />" + '&nbsp;' + "<input id='Button1' type='button' value='报修通过' class='btn btn-success' onclick=UptAgree(" + this.OrdersID + ") />" + '&nbsp;' + "<input id='Button1' type='button' value='有待商议' onclick=UptDisAgree(" + this.OrdersID + ") />"
     </script>
 }

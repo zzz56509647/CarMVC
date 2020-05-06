@@ -39,5 +39,9 @@ namespace MvcCroe.Controllers
         {
             return View();
         }
+        public IActionResult GetBreakdownShow()
+        {
+            return View();
+        }
     }
 }

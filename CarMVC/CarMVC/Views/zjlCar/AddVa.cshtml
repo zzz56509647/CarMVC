@@ -10,7 +10,6 @@
         <td>汽车品牌：</td>
         <td>
             <select id="bid">
-               
             </select>
         </td>
     </tr>
@@ -108,8 +107,7 @@
     }
 
 
-    function AddVa()
-    {
+    function AddVa() {
         var obj = {};
         obj.uid = "1";
         obj.Image = $("#Image").val();
@@ -118,27 +116,27 @@
         obj.Years = $("#Years").val();
         obj.cid = $("#cid").val();
         obj.CC = $("#CC").val();
-        obj.AMT = $("#AMT1").click() == true ? "手动":"自动";
+        obj.AMT = $("#AMT1").click() == true ? "手动" : "自动";
         obj.Price = $("#Price").val();
 
-            $.ajax({
-                url: "http://localhost:57894/api/zjlCar2",
-                type: "POST",
-                data: obj,
-                processData: false,
-                contentType: false,
-                crossDomain: true,
-                async=true,
-                success: function (d) {
-                    alert("挂靠成功");
-                    location.href = "SoCar/Show()";
-                },
-                error: function (d) {
-                    alert("挂靠失败");
-                    location.href = "SoCar/Show()";
-                }
+        $.ajax({
+            url: "http://localhost:57894/api/zjlCar2",
+            type: "POST",
+            data: obj,
+            processData: false,
+            contentType: false,
+            crossDomain: true,
+            async: true,
+            success: function (d) {
+                alert("挂靠成功");
+                location.href = "SoCar/Show()";
+            },
+            error: function (d) {
+                alert("挂靠失败");
+                location.href = "SoCar/Show()";
+            }
 
-            })
+        })
     }
 
 

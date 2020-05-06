@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>
+        百车汇→预定车辆
+    </title>
+    <script src="C:\Users\o\source\repos\CarMVC\CarMVC\CarMVC\Usercss+js\My97DatePicker\WdatePicker.js"></script>
+    <script>
+
+
+
+        $(function () {
+            Show();
+        });
+
+
+        function Show() {
+
+            function show() {
+                $.ajax({
+                    url: 'http://localhost:57894/api/',
+                    type: 'get',
+                    dataType: 'json',
+                    crossDomain: true,
+                    success: function (d) {
+                        $("#OrdersID").val(d.OrdersID);
+                        $("#Reson").val(d.Reson);
+                        $("#Phone").val(d.Phone);
+
+                    }
+                });
+            }
+        }
+
+
+        function Reserve() {
+            var obj = {};
+
+            obj.Oid = "202004301";
+            obj.uid = 1;
+            obj.CarInfoid = 1;
+
+
+            obj.Useing = $("#Useing").val();
+            obj.StartTime = $("#StartTime").val();
+            obj.EndTime = $("#EndTime").val();
+
+
+            obj.Price = (obj.EndTime - obj.StartTime) * 2;   // 单价用来反填获取
+            obj.Driver = $("#Driver").click() == true ? "1" : "0";
+
+
+            $.ajax({
+                url: "http://localhost:57894/api/zjlCar",
+                type: "POST",
+                data: obj,
+                processData: false,
+                contentType: false,
+                crossDomain: true,
+
+                success: function (d) {
+                    alert("预定成功");
+                    location.href = "SoCar/Show()";
+                },
+                error: function (d) {
+                    alert("预定失败");
+                    location.href = "SoCar/Show()";
+                }
+
+            })
+        }
+
+
+    </script>
+    
+
+
+</head>
+<body style="background-image:url(images/05.jpg)">
+
+    <table cellpadding="20" align="center" style="font-size:22px;table-layout:auto">
+        <tr>
+            <td  align="center">
+                车辆名字：
+            </td>
+            <td  align="center">
+                <span id="CarName"></span>
+            </td>
+        </tr>
+        <tr>
+            <td  align="center">
+                变速箱：
+            </td>
+            <td  align="center">
+                <span id="AMT"></span>
+            </td>
+        </tr>
+        <tr>
+            <td  align="center">租车用途：</td>
+            <td align="center">
+               
+                <input type="text" id="Useing" placeholder="请填写租车用途 如：商用、自用..等" style="width:300px;height:30px;font-size:15px;border-radius:15px 15px" />
+            </td>
+        </tr>
+        <tr>
+            <td  align="center">取车时间：</td>
+            <td align="center">
+               
+                <input type="text" id="StartTime" placeholder="请填写取车时间" style="width:300px;height:30px;font-size:15px;border-radius:15px 15px"  onclick="WdatePicker()"/>
+
+            </td>
+        </tr>
+        <tr>
+            <td  align="center">还车时间：</td>
+            <td align="center">
+               
+                <input type="text" id="EndTime" placeholder="请填写还车时间" style="width:300px;height:30px;font-size:15px;border-radius:15px 15px" onclick="WdatePicker()" />
+                
+            </td>
+        </tr>
+        <tr>
+            <td  align="center">是否配用司机：</td>
+            <td  align="center">
+               是否 <input type="checkbox" id="Driver" />
+
+            </td>
+        </tr>
+        <tr>
+            <td  align="center">
+                <input type="button" onclick="Reserve()" style="padding:16px 32px ;border-radius:5px" value="预定" />
+            </td>
+            <td  align="center">
+                <input type="button" onclick="location.href='index.html'" style="padding:16px 32px ;border-radius:5px" value="返回主页" />
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+

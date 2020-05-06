@@ -5,9 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\01.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\01.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
-    <PackageReference Include="Sakura.AspNetCore.Mvc.PagedList" Version="3.0.2" />
-    <PackageReference Include="Sakura.AspNetCore.PagedList" Version="2.0.2" />
   </ItemGroup>
 
 </Project>
