@@ -25,6 +25,7 @@
       "CarMVC/1.0.0": {
         "dependencies": {
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.2",
+          "Sakura.AspNetCore.Mvc.PagedList": "3.0.2",
           "Sakura.AspNetCore.PagedList": "2.0.2",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -847,10 +848,24 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
+      "Sakura.AspNetCore.Mvc.PagedList/3.0.2": {
+        "dependencies": {
+          "Sakura.AspNetCore.PagedList.Abstractions": "3.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Sakura.AspNetCore.Mvc.PagedList.dll": {
+            "assemblyVersion": "3.0.2.0",
+            "fileVersion": "3.0.2.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Sakura.AspNetCore.Mvc.PagedList.dll": {}
+        }
+      },
       "Sakura.AspNetCore.PagedList/2.0.2": {
         "dependencies": {
           "NETStandard.Library": "1.6.1",
-          "Sakura.AspNetCore.PagedList.Abstractions": "2.0.1",
+          "Sakura.AspNetCore.PagedList.Abstractions": "3.0.0",
           "System.Linq.Queryable": "4.3.0"
         },
         "runtime": {
@@ -863,18 +878,15 @@
           "lib/netstandard1.0/Sakura.AspNetCore.PagedList.dll": {}
         }
       },
-      "Sakura.AspNetCore.PagedList.Abstractions/2.0.1": {
-        "dependencies": {
-          "NETStandard.Library": "1.6.1"
-        },
+      "Sakura.AspNetCore.PagedList.Abstractions/3.0.0": {
         "runtime": {
-          "lib/netstandard1.0/Sakura.AspNetCore.PagedList.Abstractions.dll": {
-            "assemblyVersion": "2.0.1.0",
-            "fileVersion": "2.0.1.0"
+          "lib/netcoreapp3.0/Sakura.AspNetCore.PagedList.Abstractions.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
           }
         },
         "compile": {
-          "lib/netstandard1.0/Sakura.AspNetCore.PagedList.Abstractions.dll": {}
+          "lib/netcoreapp3.0/Sakura.AspNetCore.PagedList.Abstractions.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -3572,6 +3584,13 @@
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
     },
+    "Sakura.AspNetCore.Mvc.PagedList/3.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a2CcMxe7MAGEdhQI130X36jJvZ6+SwALf6xxXi0yjGdKhfVrf0w/fcr8g3jWg97dlnl+whhVjW+fC0+nqKyF4w==",
+      "path": "sakura.aspnetcore.mvc.pagedlist/3.0.2",
+      "hashPath": "sakura.aspnetcore.mvc.pagedlist.3.0.2.nupkg.sha512"
+    },
     "Sakura.AspNetCore.PagedList/2.0.2": {
       "type": "package",
       "serviceable": true,
@@ -3579,12 +3598,12 @@
       "path": "sakura.aspnetcore.pagedlist/2.0.2",
       "hashPath": "sakura.aspnetcore.pagedlist.2.0.2.nupkg.sha512"
     },
-    "Sakura.AspNetCore.PagedList.Abstractions/2.0.1": {
+    "Sakura.AspNetCore.PagedList.Abstractions/3.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-V0WukB335lQfqEtShHo3O50benGsbiSBv5e/Y9pmz7xH9E470j31moiMPCdEONgGtyFLYBrSG9l2v/WMTgI9+A==",
-      "path": "sakura.aspnetcore.pagedlist.abstractions/2.0.1",
-      "hashPath": "sakura.aspnetcore.pagedlist.abstractions.2.0.1.nupkg.sha512"
+      "sha512": "sha512-q/irVIKKZFyeg/QCBvsFXqGTWHPFZmoQQQ6XlKHM2XGUQNQIMIarxKCznOmXJpF9KBmRohLfwDMraGgV2uXRiQ==",
+      "path": "sakura.aspnetcore.pagedlist.abstractions/3.0.0",
+      "hashPath": "sakura.aspnetcore.pagedlist.abstractions.3.0.0.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",
