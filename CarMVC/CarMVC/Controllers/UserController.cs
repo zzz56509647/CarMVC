@@ -12,5 +12,13 @@ namespace CarMVC.Controllers
         {
             return View();
         }
+        public IActionResult AddUser()
+        {
+            return View();
+        }
+        public IActionResult UpdUser()
+        {
+            return View();
+        }
     }
 }

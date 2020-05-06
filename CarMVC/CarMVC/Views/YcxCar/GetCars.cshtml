@@ -1,10 +1,11 @@
-﻿
+﻿@*@model IEnumerable<CarMVC.Models.AllCarThis>*@
+@model Sakura.AspNetCore.IPagedList<CarMVC.Models.AllCarThis>
 @{
     ViewData["Title"] = "GetCars";
 }
-    <link href="D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\CssAndJs\ClassView\bootstrap.css" rel="stylesheet" />
+<link href="D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\CssAndJs\ClassView\bootstrap.css" rel="stylesheet" />
 <h1>GetCars</h1>
-<div >
+<div>
     <div class="row">
         <div class="col-md-3">
             <label>
@@ -31,95 +32,101 @@
             </select>
         </div>
         <div class="col-md-2">
-            
+
             <input type="button" name="name" value="查询" onclick="SelectGetCars(keyword)" />
         </div>
         <div>
             <input type="button" name="name" value="清空选项" onclick="Clear()" />
         </div>
     </div>
-   
-    <table class="table table-danger">
-        <tr>
-            <td>编号</td>
-            <td>图片</td>
-            <td>汽车名字</td>
-            <td>汽车年份</td>
-            <td>汽车排量</td>
-            <td>个数</td>
-            <td>手动/自动</td>
-            <td>价格/日</td>
-            <td>地址</td>
-            <td>操作</td>
-        </tr>
-        <tbody id="CaseBody">
 
+    <table class="table tab-content">
+        <thead>
+            <tr>
+                <th>
+                    编号
+                </th>
+                <th>
+                    图片
+                </th>
+                <th>
+                    汽车名字
+                </th>
+                <th>
+                    汽车年份
+                </th>
+                <th>
+                    汽车排量
+                </th>
+                <th>
+                    个数
+                </th>
+                <th>
+                    手动/自动
+                </th>
+                <th>
+                    价格/日
+                </th>
+                <th>
+                    地址
+                </th>
 
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CarInfoID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Image)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CarName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Years)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AMT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Count)
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            }
         </tbody>
-
     </table>
-    
-    
+    <div class="row">
+        <div class="col-md-8">
 
-    <script src="D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\CssAndJs\Ajax\jquery-1.10.2.js"></script>
+
+        </div>
+        <div>
+            <pager source="Model" />
+        </div>
+    </div>
+
+
+
+
 </div>
 
-<script>
-    $(GetCars);
-    function GetCars() {
-        $.ajax({
-            url: 'http://localhost:57894/api/Get',
-            type: 'get',
-            dataType: 'json',
-            success: function (data) {
-                $(data).each(
-                    function () {
-                        var GetCarOperation = ' <tr>< td >' + this.CarInfoID + '</td> <td>' + this.Image + '</td> <td>' + this.CarName + '</td> <td>' + this.Years + '</td><td>' + this.CC + '</td><td>' + this.Count + '</td><td>' + this.AMT + '</td><td>' + this.Price + '</td><td>' + this.Address + '</td>                           < td >' +@Html.ActionLink("详细信息","","",new { })+''+@Html.ActionLink("删除","","",new { })+'</td ></tr > '
-                        $("#CaseBody").append(GetCarOperation);
-
-                    }
-                );
-            }
-
-
-        });
-    }
-
-
-
-    function SelectGetCars(keyword) {       
-        keyword = $("#takeKeyword").val();
-        $.ajax({
-            url: 'http://localhost:57894/api/zjlCar/get?Name='+keyword,
-            type: 'post',
-            data: {
-                keyword: $("#takeKeyword").val(),
-
-            },
-            dataType: 'json',
-            success: function (data) {
-                $(data).each(
-                    function () {
-                        var GetCarOperation = ' <tr>< td >' + this.CarInfoID + '</td> <td>' + this.Image + '</td> <td>' + this.CarName + '</td> <td>' + this.Years + '</td><td>' + this.CC + '</td><td>' + this.Count + '</td><td>' + this.AMT + '</td><td>' + this.Price + '</td><td>' + this.Address + '</td>                           < td >' +@Html.ActionLink("详细信息","","",new { })+''+@Html.ActionLink("删除","","",new { })+'</td ></tr > '
-                        $("#CaseBody").append(GetCarOperation);
-
-                    }
-                );
-            }
-
-
-        });
-    }
-
-    function Clear() {
-        location.href="/YcxCar/GetCars"
-        
-    }
-
-
-
-
-</script>
 
 
 
