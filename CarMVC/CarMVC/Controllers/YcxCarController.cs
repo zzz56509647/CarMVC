@@ -17,7 +17,7 @@ namespace CarMVC.Controllers
         {
             return View();
         }
-        [HttpGet]
+       
         public IActionResult GetCars(int pageSize,int? page=1)
         {
             string url = "http://localhost:57894/CarY/getcar";
