@@ -200,7 +200,6 @@ D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\ru\Microsof
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.csprojAssemblyReference.cache
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.RazorAssemblyInfo.cache
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.RazorAssemblyInfo.cs
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.AssemblyInfoInputs.cache
@@ -364,5 +363,6 @@ D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\Sakura.AspN
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\Sakura.AspNetCore.PagedList.Abstractions.dll
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\bin\Debug\netcoreapp3.1\Sakura.AspNetCore.Mvc.PagedList.dll
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.csproj.CoreCompileInputs.cache
-D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.MvcApplicationPartsAssemblyInfo.cs
 D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.MvcApplicationPartsAssemblyInfo.cache
+D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.MvcApplicationPartsAssemblyInfo.cs
+D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\obj\Debug\netcoreapp3.1\CarMVC.csprojAssemblyReference.cache
