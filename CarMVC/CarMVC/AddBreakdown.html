@@ -45,7 +45,7 @@
             obj.UName = $("#Text1").val();
             obj.IDcard = $("#Text2").val();
             $.ajax({
-                url: 'http://localhost:57894/api/yyhCar3',
+                url: 'http://localhost:57894/api/yyhCar1',
                 type: 'post',
                 dataType: 'json',
                 data: obj,
@@ -78,14 +78,14 @@
                         </div>
                     </div>
                     <div class="card-body p-5">
-                        <h4 class="text-dark mb-5">个人实名认证</h4>
+                        <h4 class="text-dark mb-5">填写车辆故障申请</h4>
                         <form action="/index.html">
                             <div class="row">
                                 <div class="form-group col-md-12 mb-4">
-                                    <input type="text" class="form-control input-lg" id="Text1" aria-describedby="nameHelp" placeholder="Name">
+                                    <input type="text" class="form-control input-lg" id="Text1" aria-describedby="nameHelp" placeholder="原因描述">
                                 </div>
                                 <div class="form-group col-md-12 mb-4">
-                                    <input type="email" class="form-control input-lg" id="Text2" aria-describedby="emailHelp" placeholder="Username">
+                                    <input type="email" class="form-control input-lg" id="Text2" aria-describedby="emailHelp" placeholder="联系电话">
                                 </div>
                                 <div class="col-md-12">
 
