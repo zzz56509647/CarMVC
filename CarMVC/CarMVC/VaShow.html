@@ -20,7 +20,7 @@
     <link href="wwwroot\lib\bootstrap\dist\css\bootstrap.css" rel="stylesheet" />
     <script>
 
-        var pageSize = 3;
+        var pageSize = 5;
         var currentPage = 1;
         var totalPage = 1;
 
@@ -52,18 +52,18 @@
                     $("#tb").empty();
                     $(d.vas).each(function () {
                         var line = '<tr>'
-                            + '<td>' + this.vid + '</td>'
-                            + '<td>' + this.uid + '</td>'
-                            + '<td>' + this.image + '</td>'
-                            + '<td>' + this.bid + '</td>'
-                            + '<td>' + this.carName + '</td>'
-                            + '<td>' + this.years + '</td>'
-                            + '<td>' + this.cid + '</td>'
-                            + '<td>' + this.cc + '</td>'
-                            + '<td>' + this.amt + '</td>'
-                            + '<td>' + this.price + '</td>'
-                            + '<td>' + (this.vstate ? "是" : "否") + '</td>'
-                            + '<td>' + (this.vstate == 1 ? "" : "<input id = 'Button1' type = 'button' value = '审批' class='btn btn-danger' onclick = UptVa(" + this.vid + ") />")
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;">' + this.vid + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;">' + this.uid + '</td>'
+                            + '<td><img src="' + this.image + '" alt="" width="100" height="60" /></td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;">' + this.brand + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;">' + this.carName + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;">' + this.years + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;">' + this.type + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;">' + this.cc + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;">' + this.amt + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;">' + this.price + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;">' + (this.vstate ? "√" : "×") + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;">' + (this.vstate == 1 ? "" : "<input id = 'Button1' type = 'button' value = '审批' class='btn btn-danger' onclick = UptVa(" + this.vid + ") />")
                             + '</td>'
                             + '</tr>';
                         $("#tb").append(line);
@@ -94,12 +94,12 @@
 </head>
 
 <body>
-    <table class="table table-bordered">
-        <thead style="background-color: bisque">
-            <tr style="text-align: center">
+    <table class="table">
+        <thead style="background-color: white; opacity: 0.35">
+            <tr style="text-align: center; color: black; font-family: STXingkai; font-weight: 700;">
                 <th>车辆序号</th>
                 <th>用户</th>
-                <th>图片</th>
+                <th>参考图片</th>
                 <th>汽车品牌</th>
                 <th>汽车名字</th>
                 <th>汽车年份</th>
@@ -114,16 +114,25 @@
         <tbody id="tb"></tbody>
     </table>
 
-    <table class=" table-bordered table">
+    <table class="table">
         <tr>
-            <td>总记录数<span id="TotalCount"></span>条</td>
-            <td>总共<span id="TotalPage"></span>页</td>
-            <td>当前第<span id="CurrentPage"></span>页</td>
-            <td><a href="javascript:;" onclick="Show(1)">首页</a></td>
-            <td><a href="javascript:;" onclick="Show(currentPage-1)">上一页</a></td>
-            <td><a href="javascript:;" onclick="Show(currentPage+1)">下一页</a></td>
-            <td><a href="javascript:;" onclick="Show(totalPage)">尾页</a></td>
+            <td style="text-align: center; vertical-align: middle; color: #f5f4fa; font-family: STXingkai; font-weight: bolder; font-size: larger">总记录数<span id="TotalCount"></span>条</td>
+            <td style="text-align: center; vertical-align: middle; color: #f5f4fa; font-family: STXingkai; font-weight: bolder; font-size: larger">总共<span id="TotalPage"></span>页</td>
+            <td style="text-align: center; vertical-align: middle; color: #f5f4fa; font-family: STXingkai; font-weight: bolder; font-size: larger">当前第<span id="CurrentPage"></span>页</td>
+            <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
+                <input id="Button1" type="button" value="首页" onclick="Show(1)" class="btn btn-primary" />
+            </td>
+            <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
+                <input type="button" value="◀" onclick="Show(currentPage - 1)" class="btn btn-primary" />
+            </td>
+            <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
+                <input type="button" value="▶" onclick="Show(currentPage + 1)" class="btn btn-primary" />
+            </td>
+            <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
+                <input type="button" value="尾页" onclick="Show(totalPage)" class="btn btn-primary" />
+            </td>
         </tr>
     </table>
+
 </body>
 </html>

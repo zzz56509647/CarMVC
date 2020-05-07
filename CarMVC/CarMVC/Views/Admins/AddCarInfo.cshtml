@@ -1,72 +1,73 @@
 ﻿
-<form enctype="multipart/form-data" id="formData">
-    <table class="table table-bordered">
-        <tr>
-            <td>图片：</td>
-            <td><input id="Image" type="file" /></td>
+<table class="table table-bordered">
+    <tr>
+        <td>图片：</td>
+        <td><input id="Image" type="text" /></td>
 
-        </tr>
-        <tr>
-            <td>汽车品牌：</td>
-            <td>
-                <select id="bid"></select>
-            </td>
-        </tr>
-        <tr>
-            <td>汽车名字：</td>
-            <td><input id="CarName" type="text" /></td>
+    </tr>
+    <tr>
+        <td>汽车品牌：</td>
+        <td>
+            <select id="bid"></select>
+        </td>
+    </tr>
+    <tr>
+        <td>汽车名字：</td>
+        <td><input id="CarName" type="text" /></td>
 
-        </tr>
-        <tr>
-            <td>汽车年份：</td>
-            <td><input id="Years" type="text" />年</td>
+    </tr>
+    <tr>
+        <td>汽车年份：</td>
+        <td><input id="Years" type="text" />年</td>
 
-        </tr>
-        <tr>
-            <td>汽车类型：</td>
-            <td>
-                <select id="cid"></select>
-            </td>
-        </tr>
-        <tr>
-            <td>汽车排量：</td>
-            <td><input id="CC" type="text" /></td>
+    </tr>
+    <tr>
+        <td>汽车类型：</td>
+        <td>
+            <select id="cid"></select>
+        </td>
+    </tr>
+    <tr>
+        <td>汽车排量：</td>
+        <td><input id="CC" type="text" /></td>
 
-        </tr>
-        <tr>
-            <td>数量：</td>
-            <td><input id="Count" type="number" min="1" /></td>
+    </tr>
+    <tr>
+        <td>数量：</td>
+        <td><input id="Count" type="number" min="1" /></td>
 
-        </tr>
-        <tr>
-            <td>档位：</td>
-            <td><input id="AMT" type="text" /></td>
+    </tr>
+    <tr>
+        <td>档位：</td>
+        <td><input id="AMT" type="text" /></td>
 
-        </tr>
-        <tr>
-            <td>日租单价：</td>
-            <td><input id="Price" type="text" /></td>
+    </tr>
+    <tr>
+        <td>日租单价：</td>
+        <td><input id="Price" type="text" /></td>
 
-        </tr>
-        <tr>
-            <td></td>
-            <td><input id="Submit1" type="submit" value="添加" onclick="Add()" class="btn btn-dark" /></td>
-            <td></td>
-        </tr>
-    </table>
-</form>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input id="Submit1" type="submit" value="添加" onclick="Add()" class="btn btn-dark" /></td>
+        <td></td>
+    </tr>
+</table>
+
 
 @section scripts{
     <script>
         $(function () {
             BandSelCarType();
             BandSelCarBrand();
-        })
+        });
+
         function BandSelCarType() {
             $.ajax({
-                url: 'http://localhost:57894/api/zjlCarType5/',
+                url: 'http://localhost:57894/api/Admins/CarTypes',
                 type: 'get',
                 dataType: 'json',
+                //contentType: "application/json",
                 success: function (d) {
                     $("#cid").empty();
                     $("#cid").append("<option value=''>--请选择--</option>");
@@ -80,9 +81,10 @@
 
         function BandSelCarBrand() {
             $.ajax({
-                url: 'http://localhost:57894/api/zjlCarBrand/',
+                url: 'http://localhost:57894/api/Admins/CarBrands',
                 type: 'get',
                 dataType: 'json',
+                //contentType: "application/json",
                 success: function (d) {
                     $("#bid").empty();
                     $("#bid").append("<option value=''>--请选择--</option>");
@@ -108,17 +110,15 @@
             obj.Price = $("#Price").val();
 
             $.ajax({
-                url: 'http://localhost:57894/api/Admins/FileUp',
+                url: 'http://localhost:57894/api/Admins/Post',
                 type: 'post',
-                dataType: 'json',
-                data: obj,
-                async: true,
-                contentType: false,
-                processData: false,
+                //dataType: 'json',
+                data: JSON.stringify(obj),
+                contentType: "application/json",
                 success: function (d) {
                     if (d > 0) {
                         alert('添加成功！');
-                        location.href = '/yyhCar/OrdersShow';
+                        //location.href = '/yyhCar/OrdersShow';
                     }
                     else {
                         alert('添加失败！');
@@ -126,5 +126,8 @@
                 }
             })
         }
+
+
     </script>
+
 }
