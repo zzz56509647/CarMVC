@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>个人订单记录</title>
+    <link href="F:\实训1\MvcCar\CarMVC\CarMVC\CssAndJs\ClassView\bootstrap.css" rel="stylesheet" />
+    <script src="F:\实训1\MvcCar\CarMVC\CarMVC\Usercss+js\js\jquery-1.9.0.min.js"></script>
+    <script>
+
+        var pageSize = 3;
+        var currentPage = 1;
+        var totalPage = 1;
+
+
+        $(function () {
+            Show();
+        })
+
+        function Show1(page) {
+
+            var obj = {};
+            obj.currentPage = page;
+            obj.pageSize = pageSize;
+
+            $.ajax({
+                url: 'http://localhost:57894/api/zjlCar',
+                type: 'get',
+                dataType: 'json',
+                data: obj,
+                async: true,
+                crossDomain: true,
+                success: function (d) {
+                    $("#TotalCount").text(d.totalCount)
+                    $("#TotalPage").text(d.totalPage)
+                    $("#CurrentPage").text(d.currentPage)
+                    //最大页
+                    totalPage = d.totalPage;
+                    //当前页
+                    currentPage = d.currentPage;
+                    $("#tb").empty();
+                    $(d.orders).each(function () {
+                        var line = '<tr>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;>' + this.OrdersID + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;>' + this.Oid + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;>' + this.Name + '</td>' //有待改动
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;>' + this.CarName + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;>' + this.Useing + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;>' + this.StartTime + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;>' + this.EndTime + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;>' + (this.Driver ? "是" : "否") + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;>' + this.Price + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;>' + (this.ZT == 1 ? "您已预定" : (this.ZT == 2 ? "立刻上路" : "取消订单")) + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;>' + (this.Hitch == 1 ? "暂无问题" : (this.Hitch == 2 ? "故障申请" : (this.Hitch == 3 ? "报修通过" : "有待商议"))) + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #f5f4fa; font-family: STXingkai;font-size: larger;>' + (this.Hitch == 1 ? "" : "<input id='Button1' type='button' value='报修原因' class='btn btn-danger' onclick=GetBreakdown(" + this.BreakdownID + ") />" + '&nbsp;' + "<input id='Button1' type='button' value='报修通过' class='btn btn-success' onclick=UptAgree(" + this.OrdersID + ") />" + '&nbsp;' + "<input id='Button1' type='button' value='有待商议' onclick=UptDisAgree(" + this.OrdersID + ") />")
+                            + '</td>'
+                            + '</tr>';
+                        $("#tb").append(line);
+                    })
+                }
+
+            })
+        }
+
+        //跳转到故障原因
+        function GetBreakdown(id) {
+            location.href = "/Admins/GetBreakdownShow?id=" + id;
+        }
+        //修改状态
+        function UptAgree(id) {
+            $.ajax({
+                url: 'http://localhost:57894/api/Admins/' + id,
+                type: 'put',
+                dataType: 'json',
+                crossDomain: true,
+                data: { id: id },
+                success: function (d) {
+                    if (d > 0) {
+                        alert('报修通过！');
+                        Show();
+                    }
+                    else {
+                        alert('操作失败！');
+                    }
+                }
+            })
+        }
+
+        function UptDisAgree(id) {
+            $.ajax({
+                url: 'http://localhost:57894/api/Admins3/' + id,
+                type: 'put',
+                dataType: 'json',
+                crossDomain: true,
+                data: { id: id },
+                success: function (d) {
+                    if (d > 0) {
+                        alert('有待商议！');
+                        Show();
+                    }
+                    else {
+                        alert('操作失败！');
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body style="background-image:url(images/11.jpg)">
+    <table class="table table-bordered">
+        <thead style="background-color:bisque">
+            <tr style="text-align:center">
+                <th>ID</th>
+                <th>订单编号</th>
+                <th>用户</th>
+                <th>汽车名称</th>
+                <th>租车用途</th>
+                <th>取车时间</th>
+                <th>还车时间</th>
+                <th>是否配用司机</th>
+                <th>费用</th>
+                <th>订单状态</th>
+                <th>是否故障</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="tb"></tbody>
+    </table>
+
+    <table class=" table-bordered table">
+        <tr>
+            <td>总记录数<span id="TotalCount"></span>条</td>
+            <td>总共<span id="TotalPage"></span>页</td>
+            <td>当前第<span id="CurrentPage"></span>页</td>
+            <td><a href="javascript:;" onclick="Show(1)">首页</a></td>
+            <td><a href="javascript:;" onclick="Show(currentPage-1)">上一页</a></td>
+            <td><a href="javascript:;" onclick="Show(currentPage+1)">下一页</a></td>
+            <td><a href="javascript:;" onclick="Show(totalPage)">尾页</a></td>
+        </tr>
+    </table>
+
+</body>
+</html>
