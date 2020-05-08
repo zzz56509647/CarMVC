@@ -1,31 +1,22 @@
 {
   "format": 1,
   "restore": {
-    "L:\\实训一\\百车汇汽车租赁系统mvc\\CarMVC\\CarMVC\\CarMVC.csproj": {}
-    "D:\\A_Githup\\thisOnline\\CarMvc_\\CarMVC\\CarMVC\\CarMVC.csproj": {}
+    "D:\\A_Githup\\thisOnline\\mvcAgain\\CarMVC\\CarMVC\\CarMVC.csproj": {}
   },
   "projects": {
-    "L:\\实训一\\百车汇汽车租赁系统mvc\\CarMVC\\CarMVC\\CarMVC.csproj": {
-    "D:\\A_Githup\\thisOnline\\CarMvc_\\CarMVC\\CarMVC\\CarMVC.csproj": {
+    "D:\\A_Githup\\thisOnline\\mvcAgain\\CarMVC\\CarMVC\\CarMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "L:\\实训一\\百车汇汽车租赁系统mvc\\CarMVC\\CarMVC\\CarMVC.csproj",
-        "projectUniqueName": "D:\\A_Githup\\thisOnline\\CarMvc_\\CarMVC\\CarMVC\\CarMVC.csproj",
+        "projectUniqueName": "D:\\A_Githup\\thisOnline\\mvcAgain\\CarMVC\\CarMVC\\CarMVC.csproj",
         "projectName": "CarMVC",
-        "projectPath": "L:\\实训一\\百车汇汽车租赁系统mvc\\CarMVC\\CarMVC\\CarMVC.csproj",
-        "packagesPath": "C:\\Users\\吕静\\.nuget\\packages\\",
-        "outputPath": "L:\\实训一\\百车汇汽车租赁系统mvc\\CarMVC\\CarMVC\\obj\\",
-        "projectPath": "D:\\A_Githup\\thisOnline\\CarMvc_\\CarMVC\\CarMVC\\CarMVC.csproj",
+        "projectPath": "D:\\A_Githup\\thisOnline\\mvcAgain\\CarMVC\\CarMVC\\CarMVC.csproj",
         "packagesPath": "C:\\Users\\96549\\.nuget\\packages\\",
-        "outputPath": "D:\\A_Githup\\thisOnline\\CarMvc_\\CarMVC\\CarMVC\\obj\\",
+        "outputPath": "D:\\A_Githup\\thisOnline\\mvcAgain\\CarMVC\\CarMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\吕静\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
           "C:\\Users\\96549\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

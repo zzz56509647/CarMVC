@@ -2164,6 +2164,7 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -2751,7 +2752,6 @@
       "path": "runtime.native.system.net.http/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -2778,7 +2778,6 @@
       "path": "runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -3010,6 +3009,7 @@
       "path": "system.collections/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3179,6 +3179,7 @@
       "path": "system.composition.attributedmodel/1.0.31",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Composition.AttributedModel.dll",
@@ -3742,6 +3743,7 @@
       "path": "system.io.compression/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3812,6 +3814,7 @@
       "path": "system.io.compression.zipfile/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4505,6 +4508,7 @@
       "path": "system.reflection.emit/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4540,6 +4544,7 @@
       "path": "system.reflection.emit.ilgeneration/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5326,6 +5331,7 @@
       "path": "system.security.cryptography.cng/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/net46/System.Security.Cryptography.Cng.dll",
@@ -6162,32 +6168,22 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\吕静\\.nuget\\packages\\": {},
-    "D:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Users\\96549\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "L:\\实训一\\百车汇汽车租赁系统mvc\\CarMVC\\CarMVC\\CarMVC.csproj",
-      "projectUniqueName": "D:\\A_Githup\\thisOnline\\CarMvc_\\CarMVC\\CarMVC\\CarMVC.csproj",
+      "projectUniqueName": "D:\\A_Githup\\thisOnline\\mvcAgain\\CarMVC\\CarMVC\\CarMVC.csproj",
       "projectName": "CarMVC",
-      "projectPath": "L:\\实训一\\百车汇汽车租赁系统mvc\\CarMVC\\CarMVC\\CarMVC.csproj",
-      "packagesPath": "C:\\Users\\吕静\\.nuget\\packages\\",
-      "outputPath": "L:\\实训一\\百车汇汽车租赁系统mvc\\CarMVC\\CarMVC\\obj\\",
-      "projectPath": "D:\\A_Githup\\thisOnline\\CarMvc_\\CarMVC\\CarMVC\\CarMVC.csproj",
+      "projectPath": "D:\\A_Githup\\thisOnline\\mvcAgain\\CarMVC\\CarMVC\\CarMVC.csproj",
       "packagesPath": "C:\\Users\\96549\\.nuget\\packages\\",
-      "outputPath": "D:\\A_Githup\\thisOnline\\CarMvc_\\CarMVC\\CarMVC\\obj\\",
+      "outputPath": "D:\\A_Githup\\thisOnline\\mvcAgain\\CarMVC\\CarMVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\吕静\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         "C:\\Users\\96549\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
