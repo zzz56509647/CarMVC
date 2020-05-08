@@ -7,6 +7,7 @@
 @model Sakura.AspNetCore.IPagedList<CarMVC.Models.AllCarThis>
 
 
+<link href="~/ycxTool.css" rel="stylesheet" />
 
 <div>
 
@@ -78,6 +79,14 @@
                 <th>
                     地址
                 </th>
+                <th>
+                    汽车类型
+                </th>
+                <th>
+                    汽车品牌
+                </th>
+
+
 
                 <th></th>
             </tr>
@@ -114,6 +123,13 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Address)
                     </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+
                     <td>
                         <input type="button" id="Xiang" value="汽车详情" />
                     </td>

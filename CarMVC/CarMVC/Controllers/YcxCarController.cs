@@ -20,7 +20,7 @@ namespace CarMVC.Controllers
        
         public IActionResult GetCars(int pageSize,int? page=1)
         {
-            string url = "http://localhost:57894/CarY/getcar";
+            string url = "http://localhost:5000/CarY/getcar";
             HttpClient client = new HttpClient();
             //content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
             HttpResponseMessage message = client.GetAsync(url).Result;
