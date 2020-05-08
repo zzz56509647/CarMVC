@@ -1,11 +1,19 @@
 ﻿@*@model IEnumerable<CarMVC.Models.AllCarThis>*@
-@model Sakura.AspNetCore.IPagedList<CarMVC.Models.AllCarThis>
 @{
     ViewData["Title"] = "GetCars";
 }
-<link href="D:\A_Githup\thisOnline\CarMvc_\CarMVC\CarMVC\CssAndJs\ClassView\bootstrap.css" rel="stylesheet" />
-<h1>GetCars</h1>
+
+
+@model Sakura.AspNetCore.IPagedList<CarMVC.Models.AllCarThis>
+
+
+
 <div>
+
+
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
     <div class="row">
         <div class="col-md-3">
             <label>
@@ -33,14 +41,14 @@
         </div>
         <div class="col-md-2">
 
-            <input type="button" name="name" value="查询" onclick="SelectGetCars(keyword)" />
+            <input type="button" name="name" value="查询" onclick="ToSelect()" />
         </div>
         <div>
             <input type="button" name="name" value="清空选项" onclick="Clear()" />
         </div>
     </div>
 
-    <table class="table tab-content">
+    <table class="table tab-pane">
         <thead>
             <tr>
                 <th>
@@ -79,7 +87,7 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.CarInfoID)
+                        @Html.DisplayFor(modelItem => item.carInfoID)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Image)
@@ -128,6 +136,51 @@
 
 </div>
 
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+<script>
+    $(BrandSee);
+    function BrandSee() {
+        $.ajax({
+            url: 'http://localhost:57894/CarY/brandsee',
+            type: 'get',
+            datatype: 'json',
+            success: function (data) {
+                $(data).each(
+                    function () {
+                        $("#CarBrand").append('<option value= "' + this.carBrandID + '"> ' + this.brand + '</option>')
+                    });
+            }
+
+        });
+    }
+    $(TypeSee);
+    function TypeSee() {
+        $.ajax({
+            url: 'http://localhost:57894/CarY/typesee',
+            type: 'get',
+            datatype: 'json',
+            success: function (data) {
+                $(data).each(
+                    function () {
+                        $("#TypeCar").append('<option value= "' + this.carTypeID + '"> ' + this.type + '</option>')
+                    });
+            }
+
+        });
+    }
+    function ToSelect() {
+        var name = $("#takeKeyword").val();
+        var Pi = $("#CarBrand").val();
+        var typeSe = $("#TypeCar").val();
+        location.href = '/YcxCar/SelectCars?carN=' + name + '& carPi=' + Pi + '& carT=' + typeSe + '';
+
+    }
+    function Clear() {
+        location.href = '/YcxCar/GetCars'
+    }
 
 
+</script>
 

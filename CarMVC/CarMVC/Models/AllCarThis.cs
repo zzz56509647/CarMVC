@@ -33,7 +33,7 @@ namespace CarMVC.Models
         #endregion
 
         #region 汽车信息表 表名:CarInfo
-        public int CarInfoID { get; set; }
+        public int carInfoID { get; set; }
         public string Image { get; set; }
         public int bid { get; set; }
         public string CarName { get; set; }
