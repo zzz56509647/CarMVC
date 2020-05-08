@@ -5,17 +5,21 @@
     <title>
         车辆故障原因
     </title>
-    <script src="F:\实训1\MvcCarCar\CarMVC\CarMVC\wwwroot\Scripts\jquery-3.3.1.js"></script>
+    <script src="F:\实训1\MvcCarCar\CarMVC\CarMVC\CssAndJs\Ajax\jquery-1.10.2.js"></script>
+    <script src="F:\实训1\MvcCarCar\CarMVC\CarMVC\wwwroot\Scripts\jquery.unobtrusive-ajax.min.js"></script>
+    <link href="F:\实训1\MvcCarCar\CarMVC\CarMVC\wwwroot\lib\bootstrap\dist\css\bootstrap.css" rel="stylesheet" />
     <script>
         function AddUser() {
             var obj = {};
-            obj.UName = $("#Text1").val();
-            obj.IDcard = $("#Text2").val();
+            obj.Reson = $("#Text1").val();
+            obj.Phone = $("#Text2").val();
+            obj.OrdersID = parseInt($("#Text3").val());
             $.ajax({
                 url: 'http://localhost:57894/api/yyhCar1',
                 type: 'post',
-                dataType: 'json',
-                data: obj,
+                //dataType: 'json',
+                data: JSON.stringify(obj),
+                contentType: "application/json",
                 success: function (d) {
                     if (d > 0) {
                         alert('添加成功！');
@@ -32,7 +36,7 @@
         <tr>
             <td align="center">汽车品牌：</td>
             <td align="center">
-                <input id="Text1" type="text" placeholder="请输入故障原因"style="width:300px;height:30px;font-size:15px;border-radius:15px 15px" />
+                <input id="Text1" type="text" placeholder="请输入故障原因" style="width:300px;height:30px;font-size:15px;border-radius:15px 15px" />
             </td>
         </tr>
         <tr>
@@ -42,10 +46,16 @@
 
             </td>
         </tr>
+        <tr>
+            <td align="center">汽车编号：</td>
+            <td align="center">
+                <input type="text" id="Text3" placeholder="请输入汽车编号" style="width:300px;height:30px;font-size:15px;border-radius:15px 15px" />
 
+            </td>
+        </tr>
         <tr>
             <td align="center">
-                <input type="button" value="提交" onclick=" AddUser()" style="padding:16px 32px ;border-radius:5px" />
+                <input type="button" value="提交" onclick="AddUser()" style="padding:16px 32px ;border-radius:5px" />
             </td>
             <td align="center">
                 <input type="button" value="返回主页" onclick="location.href='index.html'" style="padding:16px 32px ;border-radius:5px " />
